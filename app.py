@@ -1,4 +1,5 @@
 from pathlib import Path
+import re
 
 import streamlit as st
 import streamlit.components.v1 as components
@@ -12,9 +13,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-
-# Adjust spacing only.
-# Streamlit's theme controls navigation text and background colors.
+# Style the top navigation to match the three HTML pages.
 st.markdown(
     """
     <style>
@@ -26,6 +25,22 @@ st.markdown(
     [data-testid="stMainBlockContainer"] {
         max-width: 100% !important;
         padding: 12px 16px 0 !important;
+    }
+
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 8px;
+        border-bottom: 1px solid #dce8ef;
+    }
+
+    .stTabs [data-baseweb="tab"] {
+        color: #52677a;
+        font-weight: 700;
+        padding: 10px 18px;
+    }
+
+    .stTabs [data-baseweb="tab"][aria-selected="true"] {
+        color: #066b9c;
+        border-bottom-color: #09a7d5;
     }
 
     iframe {
@@ -41,36 +56,29 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+# Each tab prefers the latest two-tone design, if present.
+# Original filenames remain supported for existing deployments.
+pages = [
+    (
+        "Atlas",
+        ("road_safety_atlas_two_tone.html", "road_safety_atlas.html"),
+    ),
+    (
+        "Who",
+        ("who has task forces_V1.html", "who has task forces.html"),
+    ),
+    (
+        "Case studies",
+        (
+            "road_safety_case_studies_two_tone.html",
+            "road_safety_case_studies.html",
+        ),
+    ),
+]
 
-# Navigation between the two HTML documents.
-pages = {
-    "Global atlas": "road_safety_atlas.html",
-    "Detailed case studies": "road_safety_case_studies.html",
-}
-
-selected_page = st.radio(
-    "Choose a view",
-    options=list(pages),
-    horizontal=True,
-    label_visibility="collapsed",
-)
-
-
-# Locate and read the selected document.
 project_folder = Path(__file__).resolve().parent
-html_path = project_folder / pages[selected_page]
 
-if not html_path.is_file():
-    st.error(
-        f"Cannot find {html_path.name}. "
-        "Put it in the same folder as app.py."
-    )
-    st.stop()
-
-html_content = html_path.read_text(encoding="utf-8")
-
-
-# Make internal links scroll within the HTML document.
+# Make in-page anchor links scroll within the HTML document.
 navigation_fix = """
 <script>
 document.addEventListener("click", function(event) {
@@ -82,10 +90,7 @@ document.addEventListener("click", function(event) {
     const href = link.getAttribute("href");
     if (!href || href === "#") return;
 
-    event.preventDefault();
-
     let targetId;
-
     try {
         targetId = decodeURIComponent(href.slice(1));
     } catch {
@@ -93,30 +98,48 @@ document.addEventListener("click", function(event) {
     }
 
     const target = document.getElementById(targetId);
-
     if (target) {
-        target.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
+        event.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 });
 </script>
 """
 
-if "</body>" in html_content:
-    html_content = html_content.replace(
-        "</body>",
-        navigation_fix + "\n</body>",
-        1,
-    )
-else:
-    html_content += navigation_fix
+# Tabs are displayed in the same order as the pages list above.
+tabs = st.tabs([label for label, _ in pages])
 
+for tab, (label, candidate_filenames) in zip(tabs, pages):
+    with tab:
+        html_path = next(
+            (
+                project_folder / filename
+                for filename in candidate_filenames
+                if (project_folder / filename).is_file()
+            ),
+            None,
+        )
 
-# Display the selected document.
-components.html(
-    html_content,
-    height=1000,
-    scrolling=True,
-)
+        if html_path is None:
+            st.error(
+                f"Cannot find the HTML for the {label} tab. "
+                f"Place one of these files beside app.py: "
+                + ", ".join(candidate_filenames)
+            )
+            continue
+
+        html_content = html_path.read_text(encoding="utf-8")
+
+        # Inject the navigation helper without modifying the stored HTML file.
+        if re.search(r"</body\s*>", html_content, flags=re.IGNORECASE):
+            html_content = re.sub(
+                r"</body\s*>",
+                lambda match: navigation_fix + "\n" + match.group(0),
+                html_content,
+                count=1,
+                flags=re.IGNORECASE,
+            )
+        else:
+            html_content += navigation_fix
+
+        components.html(html_content, height=1000, scrolling=True)
