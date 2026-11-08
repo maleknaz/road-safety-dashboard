@@ -3,9 +3,7 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
-  <title>
-   Global Road Safety Initiatives | National · Provincial · Local | UNITAR
-  </title>
+  <title>What road safety initiatives are documented worldwide? | Global road safety atlas</title>
   <style>
    :root {
   --blue: #009EDB;
@@ -836,9 +834,154 @@ footer {
     grid-template-columns: repeat(2, minmax(0, 1fr))
   }
 }
-  </style>
+  
+/* Shared visual system of Who Coordinates Road Safety Around the World?
+   Presentation only: catalogue, map, sources and controls are unchanged. */
+:root {
+  --blue:#0077b6; --cyan:#09a7d5; --night:#0e2b48; --ink:#153047;
+  --ink-soft:#52677a; --mist:#f3f8fb; --sea:#e6f4fa; --line:#dce8ef;
+  --white:#fff; --gold:#e9bd65; --green:#21765b; --red:#a55448;
+  --shadow:0 10px 32px rgba(13,47,79,.045);
+  --navy:var(--night); --deep:#103d67; --text:var(--ink); --soft:var(--mist);
+  --inksoft:var(--ink-soft); --border:var(--line); --pale:var(--sea);
+}
+html {scroll-behavior:smooth}
+body {margin:0;background:var(--mist);color:var(--ink);font:15px/1.55 "Segoe UI","Helvetica Neue",Arial,sans-serif}
+button,input,select {font:inherit}
+:focus-visible {outline:3px solid var(--cyan);outline-offset:3px}
+a {color:#066ca7;text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover {color:#034b79}
+.wrap {max-width:1580px;margin:0 auto;padding:0 30px}
+/* Same deep-blue hero and concentric motif as the reference */
+.hero {position:relative;isolation:isolate;overflow:hidden;color:white;background:linear-gradient(114deg,#0c2945 0%,#103d67 66%,#116f9c 120%);border:0;border-radius:0;padding:0;box-shadow:none}
+.hero::before {content:"";position:absolute;right:-150px;top:-245px;width:750px;height:750px;border-radius:50%;border:1px solid rgba(255,255,255,.14);box-shadow:0 0 0 73px rgba(255,255,255,.025),0 0 0 146px rgba(255,255,255,.022),0 0 0 222px rgba(255,255,255,.018);pointer-events:none;z-index:-1}
+.hero::after {content:"";width:5px;height:100%;background:var(--cyan);position:absolute;left:0;top:0}
+.hero-inner {position:relative;z-index:1;padding-top:34px;padding-bottom:57px}
+.hero .eyebrow {display:flex;align-items:center;gap:12px;margin:0 0 44px;color:#dcf5ff;font-size:11px;letter-spacing:.19em;text-transform:uppercase;font-weight:750}
+.hero .eyebrow::before {content:"";display:inline-block;width:30px;height:3px;background:var(--cyan);border-radius:4px;flex:none}
+.hero h1 {font-size:clamp(34px,4.4vw,64px);line-height:1.075;font-weight:760;letter-spacing:-.045em;color:#fff;max-width:880px;margin:0 0 20px}
+.hero .lead {max-width:800px;margin:0;color:#d6e9f5;font-size:16px;line-height:1.7}
+.hero .hero-note {display:table;max-width:800px;margin:25px 0 0;padding:8px 12px;border:1px solid rgba(255,255,255,.16);border-radius:5px;background:rgba(255,255,255,.075);color:#e7f4fc;font-size:12px;line-height:1.65}
+/* Floating metric band */
+.atlas-metric-wrap {position:relative;z-index:2}
+.metrics {display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;position:relative;margin:-30px 0 27px}
+.metric {min-width:0;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow);border-radius:12px;padding:21px 22px 19px;border-top:3px solid #0e8fc6}
+.metric:nth-child(2) {border-top-color:#2f779b}
+.metric:nth-child(3) {border-top-color:#83bace}
+.metric:nth-child(4) {border-top-color:var(--gold)}
+.metric:nth-child(5) {border-top-color:#43a3c7}
+.metric b {display:block;font-size:34px;line-height:1.1;font-weight:760;letter-spacing:-.035em;font-variant-numeric:tabular-nums;color:var(--night)}
+.metric span {display:block;font-size:13px;color:var(--ink);font-weight:700;margin-top:8px;line-height:1.35}
+/* Reference-style white navigation sidebar */
+.layout {max-width:1580px;margin:0 auto;padding:0 30px 60px;display:grid;grid-template-columns:304px minmax(0,1fr);align-items:start;gap:22px;min-height:unset}
+.layout>aside {position:sticky;top:16px;height:min(84vh,980px);overflow:hidden;display:flex;flex-direction:column;padding:0;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow)}
+.logo {padding:20px 17px 13px;border-bottom:1px solid var(--line)}
+.logo b {display:block;font-size:18px;letter-spacing:-.025em;line-height:1.3;color:var(--night)}
+.logo .mark {color:#096e9e}
+.logo small {display:block;color:#658193;font-size:11px;margin-top:5px}
+.side-meta {padding:12px 17px 11px;border-bottom:1px solid var(--line);color:#667f8c;font-size:12px;line-height:1.5}
+.side-meta strong {display:block;color:var(--night);font-size:13px;line-height:1.5}
+.side-meta p {margin:6px 0 0;color:#6c8391;font-size:11px}
+.side-nav {overflow-y:auto;scrollbar-color:#c5d9e5 transparent;scrollbar-width:thin;display:flex;flex-direction:column;gap:2px;margin:0;padding:8px 9px 12px;flex:1}
+.side-nav>a,.side-nav #countryLinks>a {display:flex;align-items:center;gap:10px;justify-content:space-between;border-radius:7px;color:#264659;text-decoration:none;font-size:12.5px;font-weight:630;padding:9px 10px;min-height:35px}
+.side-nav>a:hover,.side-nav #countryLinks>a:hover {background:#eff7fb;color:#045e90}
+.side-nav>a.active,.side-nav #countryLinks>a.active {background:#e4f3fb;color:#045e90;box-shadow:inset 3px 0 0 var(--blue)}
+.side-nav a .n {background:#eef3f5;color:#526b7a;min-width:24px;padding:2px 5px;border-radius:6px;font-size:11px;text-align:center;font-weight:700}
+.side-nav .muted {padding:13px 10px 5px;color:#8c9eac;font-size:11px;font-weight:800;letter-spacing:.14em}
+#countryLinks {display:flex;flex-direction:column;gap:2px}
+.layout>main {min-width:0;max-width:none;padding:0;margin:0;width:100%}
+/* Cards, headings and copy hierarchy */
+.visual,.country,.source-panel,.tools {border:1px solid var(--line);background:white;border-radius:12px;box-shadow:var(--shadow)}
+.visual {padding:24px 27px 18px;margin-bottom:16px}
+.section-head h2 {font-size:20px;color:var(--night);font-weight:760;letter-spacing:-.018em}
+.section-head p {font-size:13px;color:#526a7d;line-height:1.7}
+.map-legend {color:#526a7d;font-size:11.5px}
+.bubble-legend i {background:#0c91ba;border-color:#006a91}
+.map-wrap .bubble {fill:#0c91ba;stroke:#075d84}
+.map-wrap .bubble:hover,.map-wrap .bubble:focus {stroke:#0e2b48}
+.map-wrap .world {fill:#e6eef2}
+.map-wrap .grid-line {stroke:#dbe8ee}
+.map-note {font-size:12px;color:#657f90;line-height:1.65}
+.tooltip {background:var(--night);border-radius:7px}
+.source-panel {display:block;background:#eaf4f9;border:1px solid #d2e6ef;border-left:3px solid #83c6de;padding:18px 21px;margin:0 0 17px}
+.source-panel strong {color:var(--night);font-size:13px}
+.source-panel p {color:#47667a;font-size:12.5px;line-height:1.75}
+.tools {position:sticky;top:12px;z-index:6;padding:15px 17px;border-radius:12px;gap:10px}
+.tools input,.tools select {border:1px solid #d0e0e9;border-radius:8px;padding:10px 11px;color:var(--ink);background:#f8fbfd}
+.tools input:focus,.tools select:focus {border-color:#69b4d0}
+.tools label {color:#496274;font-size:12px}
+.btn {background:#0077b6;border:1px solid #0077b6;border-radius:7px;padding:9px 13px;font-size:12px;font-weight:700}
+.btn:hover {background:#055e8b}
+.btn.outline {background:#fff;border-color:#d2e2ed;color:#31749a}
+.btn.outline:hover {background:#eef7fb}
+.count-line {color:#58778b;font-size:12px;margin:19px 2px 12px}
+.country {margin:0 0 16px;border-radius:12px;scroll-margin-top:90px}
+.country-head {display:flex;background:#fff;padding:23px 26px 21px;border-bottom:1px solid var(--line)}
+.country-head h2 {font-size:clamp(24px,2.5vw,36px);line-height:1.15;letter-spacing:-.035em;font-weight:760;color:var(--night)}
+.country-head .caption {color:#637a8b;font-size:12px;line-height:1.65}
+.tags {gap:6px}
+.tag {font-size:11px;color:#607785;background:#f7fafb;border:1px solid #dce6ea;border-radius:5px;padding:4px 8px}
+.tag.national {background:#e6f5fa;color:#066b9c;border-color:#c4e8f4}
+.tag.provincial {background:#edf3fa;color:#3a6483;border-color:#dce6ed}
+.tag.local {background:#e4f5ec;color:#1b6e4b;border-color:#cce8d9}
+.country-body {padding:12px 22px 20px}
+.tier {border:1px solid var(--line);border-radius:9px;margin:12px 0 16px}
+.tier-head {background:#f4f9fc;color:#34566d;padding:13px 15px;font-size:13px;font-weight:750}
+.tier-count {border-radius:6px;background:#e6f4fa;color:#066b9c}
+.tier>summary::before {color:#2095be}
+.tier>summary:hover {background:#eaf5fa}
+.tier-body {padding:6px 17px 11px}
+.jurisdiction {border-left:3px solid #83c6de;padding-left:14px}
+.jurisdiction h4 {color:var(--night)}
+.local-city {color:#357d9f}
+.entry {border-bottom:1px solid #e5edf1;padding:14px 4px 17px}
+.entry h4 {font-size:16px;letter-spacing:-.016em;color:var(--night)}
+.orig {color:#637a8b}
+.chip {font-size:11px;color:#607785;background:#f7fafb;border:1px solid #dce6ea;border-radius:5px;padding:3px 7px}
+.desc {color:#415e72;font-size:13px;line-height:1.7}
+.entitybox {border:1px solid #dcebf2;border-left:3px solid #83c6de;background:#f4f9fc;border-radius:7px;padding:14px 16px;color:#34566d}
+.entitybox b {color:#357d9f}
+.entry-meta {color:#657f90;font-size:12px}
+.entry-meta b {color:#34566d}
+.entry-links {gap:8px}
+.entry-links a {display:inline-block;background:#edf6fa;border:1px solid #d5e9f2;border-radius:5px;padding:6px 9px;color:#066ca7;font-size:11.5px}
+.missing {color:#647f8f;background:#f9fcfe;border:1px dashed #b9d3e2}
+.empty-global {border:1px dashed #b9d3e2;color:#527084;background:#fff}
+.layout footer {font-size:12px;color:#6e8290;border-top:1px solid #d7e4eb;line-height:1.7;margin-top:24px;padding:20px 0}
+@media(max-width:1200px) {.metrics{grid-template-columns:repeat(3,minmax(0,1fr))}.layout{grid-template-columns:260px minmax(0,1fr);gap:15px}.metric{padding:17px}}
+@media(max-width:740px) {
+ .wrap{padding:0 15px}.hero-inner{padding-top:25px;padding-bottom:50px}.hero .eyebrow{margin-bottom:32px}.hero .lead{font-size:14px}.hero::before{right:-380px}
+ .metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:-23px 0 18px}.metric{padding:13px 16px}.metric b{font-size:27px}.metric span{font-size:11.5px}
+ .layout{display:block;padding:0 15px 35px}.layout>aside{position:relative;top:auto;height:auto;max-height:320px;margin-bottom:16px}.side-nav{min-height:100px;max-height:175px}.layout>main{padding:0}
+ .visual{padding:18px}.source-panel{padding:16px}.country-head{padding:20px}.country-body{padding:12px}.tools{position:relative;top:auto}.tools input,.tools select{width:100%}
+}
+@media print {.hero{color:var(--night);background:#fff;border-bottom:2px solid var(--blue)}.hero::before,.hero::after{display:none}.hero h1{color:var(--night)}.hero .lead,.hero .hero-note,.hero .eyebrow{color:var(--ink)}.layout{display:block}.layout>aside{display:none}.tools{position:static}.metrics{margin:15px 0}}
+
+
+/* The cyan-accented, two-tone heading treatment mirrors the country directory. */
+.hero h1 em { color: #72d6f3; font-style: normal; }
+@media print { .hero h1 em { color: #066a97; } }
+</style>
  </head>
  <body>
+  <header class="hero" id="overview"><div class="wrap hero-inner">
+     <div class="eyebrow">
+      Road safety · Worldwide case studies and examples
+     </div>
+     <h1>
+      What <em>road safety initiatives</em> are documented worldwide?
+     </h1>
+     <p class="lead">
+      A collection of road safety case studies and examples worldwide, organized by country and by national, provincial/state/regional, and local/municipal levels. Initiatives were identified through searches in English and relevant national and regional languages. Each entry describes the initiative, participating organizations, and implementation status, with links to the source websites.
+     </p>
+     <p class="hero-note">
+      The map shows the number of initiatives documented for each country. These counts reflect catalogue coverage rather than road safety performance.
+     </p>
+    </div></header>
+  <div class="wrap atlas-metric-wrap">
+<div class="metrics" id="metrics">
+    </div>
+  </div>
   <div class="layout">
    <aside>
     <div class="logo">
@@ -878,22 +1021,6 @@ footer {
     </nav>
    </aside>
    <main>
-    <section class="hero" id="overview">
-     <div class="eyebrow">
-      Road safety · Worldwide case studies and examples
-     </div>
-     <h1>
-      Global Road Safety Initiative Atlas
-     </h1>
-     <p class="lead">
-      A collection of road safety case studies and examples worldwide, organized by country and by national, provincial/state/regional, and local/municipal levels. Initiatives were identified through searches in English and relevant national and regional languages. Each entry describes the initiative, participating organizations, and implementation status, with links to the source websites.
-     </p>
-     <p class="hero-note">
-      The map shows the number of initiatives documented for each country. These counts reflect catalogue coverage rather than road safety performance.
-     </p>
-    </section>
-    <div class="metrics" id="metrics">
-    </div>
     <section class="visual" id="mapSection">
      <div class="section-head">
       <div>
