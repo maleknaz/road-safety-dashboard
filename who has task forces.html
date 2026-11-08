@@ -311,6 +311,15 @@
         ? `Showing ${int(flaggedRows.length)} individual institutions with unverified participating organizations, across ${int(flaggedCountriesCount)} countries. Search to narrow the list or select a country to open its full profile.`
         : `Filter by institution to view the ${int(flaggedRows.length)} entries (across ${int(flaggedCountriesCount)} countries) where the list of participating organizations could not be confirmed. This is separate from whether a coordinating body was identified.`;
     }
+    // In Streamlit, components.html uses an about:srcdoc iframe. Browsers can
+    // reject history URL updates there; this must not interrupt rendering.
+    function safeReplaceState(fragment){
+      try {
+        window.history.replaceState(null, '', fragment);
+      } catch (_) {
+        // Country selection and filtering still work without URL hash updates.
+      }
+    }
     function openCountry(name, scrollTop=false){
       if(!byCountry.has(name)) return;
       state.mode='country';
@@ -414,7 +423,7 @@
     function selectCountry(name, scrollTop=false){
       if(!byCountry.has(name))return;
       state.selected=name;
-      history.replaceState(null,'','#country='+encodeURIComponent(name));
+      safeReplaceState('#country='+encodeURIComponent(name));
       updateModeUI();renderNav();renderOverview(name);renderRecords(name);
       if(scrollTop && matchMedia('(max-width:740px)').matches) document.getElementById('main').scrollIntoView({behavior:'smooth',block:'start'});
     }
@@ -450,7 +459,7 @@
       if(state.mode==='flagged'){
         state.filter='all';
         filterButtons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter==='all')));
-        history.replaceState(null,'','#membership=unverified');
+        safeReplaceState('#membership=unverified');
       }
       update();
     }));
