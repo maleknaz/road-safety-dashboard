@@ -64,11 +64,11 @@ pages = [
         ("road_safety_atlas_two_tone.html", "road_safety_atlas.html"),
     ),
     (
-        "Who",
+        "Task forces around the Globe",
         ("who has task forces_V1.html", "who has task forces.html"),
     ),
     (
-        "Case studies",
+        "Largest Initiatives",
         (
             "road_safety_case_studies_two_tone.html",
             "road_safety_case_studies.html",
