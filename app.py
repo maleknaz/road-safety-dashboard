@@ -13,7 +13,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-# Style the top navigation to match the three HTML pages.
+# Style the top navigation to match the four HTML pages.
 st.markdown(
     """
     <style>
@@ -73,6 +73,10 @@ pages = [
             "road_safety_case_studies_two_tone.html",
             "road_safety_case_studies.html",
         ),
+    ),
+    (
+        "Policies, Strategies, and Plans Around the Globe",
+        ("Existing docs.html",),
     ),
 ]
 
