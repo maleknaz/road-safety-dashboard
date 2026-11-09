@@ -165,9 +165,105 @@
     @media print {
       body {background:#fff; font-size:11pt;} .hero {background:#fff;color:#123c5a;border-bottom:2px solid #0077b6;} .hero:before,.hero:after{display:none}.hero h1{color:#123c5a;font-size:28pt}.hero h1 em{color:#0077b6}.hero p,.signature{color:#345b73}.edition,.meta,.sidebar,.overview-tools,.metrics,.contextline,.data-notes,.unverified-countries,.institution-toolbar{display:none!important}.wrap{max-width:100%;padding:0 12px}.app{display:block}.country-overview{padding:10px 0;border:0;box-shadow:none}.record{break-inside:avoid;box-shadow:none}.record:not([open]) .record-body{display:block}.record>summary{padding:10px}.record-body{padding:0 12px 10px}.members-grid{grid-template-columns:1fr 1fr}.country-header h2{font-size:22pt}.record-name{font-size:14pt}footer{font-size:9pt}
     }
+
+    /* Overview landing screen for all countries. Institution records are unchanged. */
+    .all-countries-link {display:flex;align-items:center;justify-content:space-between;gap:10px;width:calc(100% - 18px);margin:10px 9px 3px;padding:10px 13px;background:#f9fcfe;border:1px solid #dce8ef;border-radius:8px;color:#285874;font-weight:750;text-align:left;font-size:12px;cursor:pointer;}
+    .all-countries-link[aria-current="true"] {background:#e4f3fb;border-color:#9ccedf;color:#045e90;box-shadow:inset 3px 0 0 #0077b6;}
+    .all-countries-link:hover {background:#eef8fd;}
+    .all-countries-link .count {font-variant-numeric:tabular-nums;font-size:11px;}
+    .all-country-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:stretch;margin:0 0 20px;}
+    .country-tile {display:flex;flex-direction:column;gap:10px;align-items:flex-start;text-align:left;min-width:0;padding:18px;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:11px;box-shadow:var(--shadow);cursor:pointer;}
+    .country-tile:hover,.country-tile:focus-visible {border-color:#83c6de;background:#f6fbfe;box-shadow:0 7px 22px rgba(5,81,122,.10);}
+    .country-tile .tile-name {font-size:15px;font-weight:760;color:var(--night);line-height:1.4;overflow-wrap:anywhere;}
+    .country-tile .tile-status {font-size:12px;color:#496a7f;line-height:1.55;}
+    .country-tile .tile-note {font-size:11px;color:#7a6270;line-height:1.5;}
+    .country-tile .tile-action {margin-top:auto;padding-top:6px;color:#006b9a;font-size:11px;font-weight:800;}
+    @media(max-width:1250px) {.all-country-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+    @media(max-width:740px) {.all-country-grid{grid-template-columns:1fr;gap:9px}.country-tile{padding:14px 16px}.all-countries-link{width:calc(100% - 18px)}}
+    @media print {.all-countries-link{display:none}.all-country-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.country-tile{break-inside:avoid;box-shadow:none}}
+    @media(max-width:740px) {.overview-tools{flex-wrap:wrap;justify-content:flex-start}}
   </style>
+<style>
+
+/* Shared Global Road Safety masthead, adapted from the document directory.
+   Scoped styles prevent interference with existing page layouts and controls. */
+.grs-global-banner,
+.grs-global-banner * { box-sizing: border-box; }
+.grs-global-banner { width: 100%; position: relative; z-index: 15; }
+.grs-global-banner .grs-global-stripe {
+    height: 6px;
+    background: linear-gradient(90deg, #077c96 0 42%, #d4ac38 42% 48%, #16394f 48%);
+}
+.grs-global-banner .grs-global-nav {
+    background: #fff;
+    border-bottom: 1px solid #dbe5eb;
+    width: 100%;
+}
+.grs-global-banner .grs-global-wrap {
+    min-height: 66px;
+    max-width: 1460px;
+    padding: 0 30px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+.grs-global-banner .grs-global-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font: 800 13px/1.5 system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+    color: #10334b;
+    min-width: 0;
+}
+.grs-global-banner .grs-global-mark {
+    width: 8px;
+    height: 28px;
+    flex: none;
+    display: block;
+    background: #0796ad;
+    border-radius: 3px;
+}
+.grs-global-banner .grs-global-section {
+    font-weight: 400;
+    letter-spacing: .01em;
+    color: #82929d;
+}
+.grs-global-banner .grs-global-detail {
+    color: #607389;
+    font: 400 12px/1.5 system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    white-space: nowrap;
+}
+@media (max-width: 760px) {
+    .grs-global-banner .grs-global-wrap { padding: 0 16px; }
+    .grs-global-banner .grs-global-detail { display: none; }
+    .grs-global-banner .grs-global-brand { font-size: 12px; gap: 9px; }
+}
+@media (max-width: 410px) {
+    .grs-global-banner .grs-global-brand { flex-wrap: wrap; column-gap: 9px; row-gap: 0; padding: 11px 0; }
+    .grs-global-banner .grs-global-section { width: 100%; padding-left: 17px; }
+}
+
+</style>
 </head>
 <body>
+<div class="grs-global-banner" aria-label="Global Road Safety page header">
+  <div class="grs-global-stripe" aria-hidden="true"></div>
+  <div class="grs-global-nav">
+    <div class="grs-global-wrap">
+      <div class="grs-global-brand">
+        <span class="grs-global-mark" aria-hidden="true"></span>
+        <span>GLOBAL ROAD SAFETY</span>
+        <span class="grs-global-section">/ INSTITUTION DIRECTORY</span>
+      </div>
+      <div class="grs-global-detail">Research reference • November 2026</div>
+    </div>
+  </div>
+</div>
+
   <header class="hero">
     <div class="wrap hero-inner">
       <div class="topline"><div class="signature">Global road safety / institutional landscape</div><div class="edition">Country evidence directory · Global overview</div></div>
@@ -206,6 +302,7 @@
             <button class="filter" type="button" data-filter="no" aria-pressed="false">No body confirmed · 24</button>
           </div>
         </div>
+        <button type="button" class="all-countries-link" id="all-countries-link" aria-current="true"><span>All countries overview</span><span class="count">195</span></button>
         <div class="list-header"><span>Countries · A to Z</span><span id="list-count" aria-live="polite">195</span></div>
         <nav class="country-list" id="country-list" aria-label="Country list"></nav>
         <div class="side-foot">Select a country to explore its institution entries. The number beside a country is the <strong>number of entries</strong>, not necessarily the number of distinct councils or task forces.</div>
@@ -252,6 +349,7 @@
     const names = [...byCountry.keys()].sort((a,b) => a.localeCompare(b,'en',{sensitivity:'base'}));
     const search = document.getElementById('search');
     const countryList = document.getElementById('country-list');
+    const allCountriesLink = document.getElementById('all-countries-link');
     const overview = document.getElementById('country-overview');
     const recordsEl = document.getElementById('record-list');
     const filterButtons = [...document.querySelectorAll('[data-filter]')];
@@ -343,6 +441,7 @@
       });
     }
     function renderNav(){
+      allCountriesLink.setAttribute('aria-current', String(state.mode === 'country' && !state.selected));
       const matched = visibleCountries();
       document.getElementById('list-count').textContent = `${int(matched.length)} of ${int(names.length)}`;
       let prevLetter='';
@@ -354,6 +453,44 @@
         html.push(`<button type="button" class="country-button" data-country="${e(name)}" aria-current="${state.selected===name?'true':'false'}"><span class="dot ${countryYes(name)?'':'none'}" aria-hidden="true"></span><span class="country-name">${e(name)}</span><span class="count">${count}</span></button>`);
       }
       countryList.innerHTML = html.join('') || '<div class="empty-list">No countries match this search or filter.</div>';
+    }
+    function renderAllCountries(matched){
+      state.selected=null;
+      const totalYes=matched.filter(countryYes).length;
+      const totalNo=matched.length-totalYes;
+      overview.innerHTML=`<div class="kicker"><span class="line"></span> GLOBAL COUNTRY DIRECTORY</div>
+        <div class="country-header"><div><h2>Road safety coordination by country</h2>
+        <p class="overview-summary">Browse ${int(matched.length)} ${matched.length===1?'country':'countries'} and select any country to see its commissions, councils, task forces, participating organizations, government hierarchy and supporting references. No country is selected by default.</p></div></div>
+        <div class="status-summary"><span class="mini-pill neutral">${int(totalYes)} ${totalYes===1?'country with an identified body':'countries with identified bodies'}</span><span class="mini-pill negative">${int(totalNo)} ${totalNo===1?'country without a confirmed body':'countries without confirmed bodies'}</span><span class="mini-pill neutral">${int(matched.length)} countries in this view</span></div>`;
+      document.getElementById('entry-label').textContent=`Browse countries · ${int(matched.length)} shown`;
+      if (!matched.length) {
+        recordsEl.innerHTML='<div class="no-records">No countries match this search or filter. Clear the search or select All countries to return to the full directory.</div>';
+        return;
+      }
+      recordsEl.innerHTML=`<div class="all-country-grid">${matched.map(name=>{
+        const found=byCountry.get(name);
+        const identified=found.filter(yes).length;
+        const pending=found.filter(isPending).length;
+        const label=identified
+          ? `${int(identified)} ${identified===1?'institution entry identified':'institution entries identified'}`
+          : 'No coordinating body confirmed';
+        return `<button type="button" class="country-tile" data-open-country="${e(name)}" aria-label="Open ${e(name)} country profile">
+          <span class="tile-name">${e(name)}</span>
+          <span class="tile-status">${e(label)}</span>
+          ${pending?`<span class="tile-note">${int(pending)} ${pending===1?'entry has':'entries have'} unverified participating organizations</span>`:''}
+          <span class="tile-action">View country profile →</span></button>`;
+      }).join('')}</div>`;
+    }
+    function showAllCountries(){
+      state.mode='country';
+      state.selected=null;
+      state.filter='all';
+      state.query='';
+      search.value='';
+      document.getElementById('clear-search').style.display='none';
+      filterButtons.forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.filter==='all')));
+      safeReplaceState('#all-countries');
+      update();
     }
     function renderOverview(name){
       if(state.mode === 'flagged'){
@@ -370,8 +507,9 @@
       const summary = y ? `${int(y)} ${y===1?'institution has':'institutions have'} been identified in the available information.${pending?` For ${int(pending)} ${pending===1?'entry, the participating organizations have':'entries, the participating organizations have'} not been verified.`:''} Select each entry to examine its mandate, participating organizations, original-language name and administrative hierarchy.` : `No qualifying road safety coordinating body could be confirmed for this country from the available information. That does not mean one does not exist. See the entry below for context and research limitations.`;
       overview.innerHTML = `<div class="kicker"><span class="line"></span> COUNTRY PROFILE <span>·</span> ${int(found.length)} documented ${found.length===1?'entry':'entries'}</div>
         <div class="country-header"><div><h2>${e(name)}</h2><p class="overview-summary">${e(summary)}</p></div>
-        <div class="overview-tools"><button type="button" class="text-button" id="copy-link" title="Copy country link">Copy country link</button><button type="button" class="text-button" id="print-country" title="Print or save as PDF">Print</button></div></div>
+        <div class="overview-tools"><button type="button" class="text-button" id="back-to-all">All countries</button><button type="button" class="text-button" id="copy-link" title="Copy country link">Copy country link</button><button type="button" class="text-button" id="print-country" title="Print or save as PDF">Print</button></div></div>
         <div class="status-summary">${y?`<span class="mini-pill neutral">${int(y)} ${y===1?'institution':'institutions'} identified</span>`:''}${no?`<span class="mini-pill negative">${int(no)} unverified ${no===1?'entity':'entities'}</span>`:''}${pending?`<span class="mini-pill caution">${int(pending)} ${pending===1?'entry':'entries'} with unverified participating entities</span>`:''}</div>`;
+      document.getElementById('back-to-all').addEventListener('click',showAllCountries);
       document.getElementById('copy-link').addEventListener('click',async ev => {
         const url=location.href.split('#')[0]+'#country='+encodeURIComponent(name);
         try { await navigator.clipboard.writeText(url); ev.currentTarget.textContent='Link copied'; setTimeout(() => ev.currentTarget.textContent='Copy country link',1500); }
@@ -436,12 +574,16 @@
         renderRecords(state.selected);
         return;
       }
-      if(matched.length && (!state.selected || !matched.includes(state.selected))) state.selected=matched[0];
-      if(!matched.length) {
-        renderNav();overview.innerHTML='<h2>No matching countries</h2><p class="overview-summary">Try removing a filter or searching for another country, institution or ministry.</p>';recordsEl.innerHTML='';document.getElementById('entry-label').textContent='No results';return;
+      if(state.selected && matched.includes(state.selected)) {
+        renderNav();
+        renderOverview(state.selected);
+        renderRecords(state.selected);
+        return;
       }
-      selectCountry(state.selected);
+      renderNav();
+      renderAllCountries(matched);
     }
+    allCountriesLink.addEventListener('click',showAllCountries);
     countryList.addEventListener('click',ev => {
       const button=ev.target.closest('button[data-country]');
       if(button)openCountry(button.dataset.country,true);
@@ -456,17 +598,40 @@
     });
     modeButtons.forEach(button=>button.addEventListener('click',()=>{
       state.mode=button.dataset.mode;
+      state.selected=null;
       if(state.mode==='flagged'){
         state.filter='all';
         filterButtons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter==='all')));
         safeReplaceState('#membership=unverified');
+      }else{
+        safeReplaceState('#all-countries');
       }
       update();
     }));
-    search.addEventListener('input',ev=>{state.query=ev.target.value.trim();document.getElementById('clear-search').style.display=state.query?'block':'none';update();});
-    document.getElementById('clear-search').addEventListener('click',()=>{search.value='';state.query='';search.focus();document.getElementById('clear-search').style.display='none';update();});
-    filterButtons.forEach(btn=>btn.addEventListener('click',()=>{state.filter=btn.dataset.filter;filterButtons.forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));update();}));
-    window.addEventListener('hashchange',()=>{if(location.hash==='#membership=unverified'){state.mode='flagged';update();return;}const name=decodeHash();if(name&&byCountry.has(name)){openCountry(name)}});
+    search.addEventListener('input',ev=>{
+      state.query=ev.target.value.trim();
+      state.selected=null;
+      document.getElementById('clear-search').style.display=state.query?'block':'none';
+      if(state.mode==='country')safeReplaceState('#all-countries');
+      update();
+    });
+    document.getElementById('clear-search').addEventListener('click',()=>{
+      search.value='';state.query='';state.selected=null;search.focus();
+      document.getElementById('clear-search').style.display='none';
+      if(state.mode==='country')safeReplaceState('#all-countries');
+      update();
+    });
+    filterButtons.forEach(btn=>btn.addEventListener('click',()=>{
+      state.mode='country';state.selected=null;state.filter=btn.dataset.filter;
+      filterButtons.forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));
+      safeReplaceState('#all-countries');
+      update();
+    }));
+    window.addEventListener('hashchange',()=>{
+      if(location.hash==='#membership=unverified'){state.mode='flagged';state.selected=null;update();return;}
+      if(!location.hash||location.hash==='#all-countries'){showAllCountries();return;}
+      const name=decodeHash();if(name&&byCountry.has(name)){openCountry(name)}
+    });
     function decodeHash(){const m=location.hash.match(/^#country=(.*)$/);if(!m)return null;try{return decodeURIComponent(m[1])}catch(_){return null}}
     document.getElementById('stat-countries').textContent=int(s.countries);
     document.getElementById('stat-records').textContent=int(s.entries);
@@ -481,10 +646,14 @@
     renderUnverifiedCountryList();
     if(location.hash==='#membership=unverified'){
       state.mode='flagged';
-      state.selected=byCountry.has('Sweden')?'Sweden':names[0];
+      state.selected=null;
       update();
+    }else if(initial&&byCountry.has(initial)){
+      // A shared country URL still opens that specific country's profile.
+      selectCountry(initial);
     }else{
-      selectCountry(initial&&byCountry.has(initial)?initial:(byCountry.has('Sweden')?'Sweden':names[0]));
+      // No country URL: show the complete directory instead of defaulting to Sweden.
+      update();
     }
   })();
   </script>
