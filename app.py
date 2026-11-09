@@ -58,6 +58,7 @@ st.markdown(
 
 # Each tab prefers the latest two-tone design, if present.
 # Original filenames remain supported for existing deployments.
+# Display order: Atlas, Task forces, Policies/Strategies/Plans, Largest Initiatives.
 pages = [
     (
         "Atlas",
@@ -68,15 +69,15 @@ pages = [
         ("who has task forces_V1.html", "who has task forces.html"),
     ),
     (
+        "Policies, Strategies, and Plans Around the Globe",
+        ("Existing docs.html",),
+    ),
+    (
         "Largest Initiatives",
         (
             "road_safety_case_studies_two_tone.html",
             "road_safety_case_studies.html",
         ),
-    ),
-    (
-        "Policies, Strategies, and Plans Around the Globe",
-        ("Existing docs.html",),
     ),
 ]
 
