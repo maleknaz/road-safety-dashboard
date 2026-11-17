@@ -13,7 +13,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-# Style the top navigation to match the five HTML pages.
+# Style the top navigation to match the six HTML pages.
 st.markdown(
     """
     <style>
@@ -58,7 +58,7 @@ st.markdown(
 
 # Each tab prefers the latest two-tone design, if present.
 # Original filenames remain supported for existing deployments.
-# Display order: Atlas, Bodies and Strategies, Task forces, Policies/Strategies/Plans, Largest Initiatives.
+# Display order: Atlas, Bodies and Strategies, Practice vs Checklist, Task forces, Policies/Strategies/Plans, Largest Initiatives.
 pages = [
     (
         "Atlas",
@@ -69,6 +69,14 @@ pages = [
         (
             "Bodies & Their Road Safety Strategies.html",
             "bodies_and_their_road_safety_strategies.html",
+        ),
+    ),
+    (
+        "Practice vs Checklist",
+        (
+            "practice vs checklist.html",
+            "Practice vs Checklist.html",
+            "practice_vs_checklist.html",
         ),
     ),
     (
