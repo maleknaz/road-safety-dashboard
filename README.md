@@ -55,3 +55,6 @@ Deploy to a new Streamlit application or replace the existing `app.py` and add t
 8. Download data
 
 The earlier comparison and detailed assessment HTML are retained under `reference_source_pages/` for maintenance only, not as dashboard tabs. There is no correction-log tab. The case study comparison counts are drawn from the same reviewed 22-mechanism dataset as the detailed case cards. The checklists are independent user planning tools; selecting a checkbox does not change evidence scores.
+
+## Unified headers (18 November 2026)
+All nine dashboard and supporting country HTML pages use the same 72 px white masthead and 430 px desktop hero. Headline typography, spacing and dark navy background are consistent. The words 'road safety' are highlighted in muted blue (#A3C9DF), with all other headline text white. Smaller screens use a responsive auto-height header to avoid truncation. No underlying case data or checklist definitions were changed.
