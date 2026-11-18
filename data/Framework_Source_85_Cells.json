@@ -1,0 +1,512 @@
+{
+  "01-1": {
+    "domain": "Government leadership & administration",
+    "pillar": "P1 Management",
+    "ideal": "Adopt national road safety targets and lead-agency coordination",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "01-2": {
+    "domain": "Government leadership & administration",
+    "pillar": "P2 Roads",
+    "ideal": "Coordinate road-owning agencies through interagency safety plans",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "01-3": {
+    "domain": "Government leadership & administration",
+    "pillar": "P3 Vehicles",
+    "ideal": "Coordinate national vehicle-safety regulation and approval systems",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "01-4": {
+    "domain": "Government leadership & administration",
+    "pillar": "P4 Users",
+    "ideal": "Develop multisectoral road-user safety action plans",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "01-5": {
+    "domain": "Government leadership & administration",
+    "pillar": "P5 Post-crash",
+    "ideal": "Establish a coordinated national post-crash response system",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "02-1": {
+    "domain": "Public finance & fiscal administration",
+    "pillar": "P1 Management",
+    "ideal": "Fund a costed, results-based road safety programme",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "02-2": {
+    "domain": "Public finance & fiscal administration",
+    "pillar": "P2 Roads",
+    "ideal": "Prioritize high-risk road safety infrastructure investments",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "02-3": {
+    "domain": "Public finance & fiscal administration",
+    "pillar": "P3 Vehicles",
+    "ideal": "Budget for vehicle inspection and safety compliance capacity",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "02-4": {
+    "domain": "Public finance & fiscal administration",
+    "pillar": "P4 Users",
+    "ideal": "Finance proven speed-management and enforcement programmes",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "02-5": {
+    "domain": "Public finance & fiscal administration",
+    "pillar": "P5 Post-crash",
+    "ideal": "Finance emergency dispatch, trauma and rehabilitation services",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "03-1": {
+    "domain": "Police & traffic enforcement",
+    "pillar": "P1 Management",
+    "ideal": "Coordinate high-visibility, data-led traffic enforcement",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "03-2": {
+    "domain": "Police & traffic enforcement",
+    "pillar": "P2 Roads",
+    "ideal": "Enforce temporary roadwork traffic controls",
+    "evidence_base": "Direct intervention theme; mapping proposed"
+  },
+  "03-3": {
+    "domain": "Police & traffic enforcement",
+    "pillar": "P3 Vehicles",
+    "ideal": "Inspect road vehicles for roadworthiness and legal compliance",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "03-4": {
+    "domain": "Police & traffic enforcement",
+    "pillar": "P4 Users",
+    "ideal": "Enforce speed limits, drink-driving and helmet/seat-belt laws",
+    "evidence_base": "Direct intervention theme; mapping proposed"
+  },
+  "03-5": {
+    "domain": "Police & traffic enforcement",
+    "pillar": "P5 Post-crash",
+    "ideal": "Secure crash scenes and collect crash investigation data",
+    "evidence_base": "Direct intervention theme; mapping proposed"
+  },
+  "04-1": {
+    "domain": "Justice & legal services",
+    "pillar": "P1 Management",
+    "ideal": "Provide legal framework and procedures for traffic offences",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "04-2": {
+    "domain": "Justice & legal services",
+    "pillar": "P2 Roads",
+    "ideal": "Maintain legal processes concerning unsafe road infrastructure",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "04-3": {
+    "domain": "Justice & legal services",
+    "pillar": "P3 Vehicles",
+    "ideal": "Apply legal remedies for defective or unsafe vehicles",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "04-4": {
+    "domain": "Justice & legal services",
+    "pillar": "P4 Users",
+    "ideal": "Adjudicate serious traffic offences",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "04-5": {
+    "domain": "Justice & legal services",
+    "pillar": "P5 Post-crash",
+    "ideal": "Ensure legal support and remedies for crash survivors",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "05-1": {
+    "domain": "Fire protection & rescue",
+    "pillar": "P1 Management",
+    "ideal": "Coordinate emergency rescue service planning",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "05-2": {
+    "domain": "Fire protection & rescue",
+    "pillar": "P2 Roads",
+    "ideal": "Plan emergency service access to road networks",
+    "evidence_base": "Direct intervention theme; mapping proposed"
+  },
+  "05-3": {
+    "domain": "Fire protection & rescue",
+    "pillar": "P3 Vehicles",
+    "ideal": "Train responders in extrication from damaged vehicles",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "05-4": {
+    "domain": "Fire protection & rescue",
+    "pillar": "P4 Users",
+    "ideal": "Train community and non-medical first responders",
+    "evidence_base": "Direct intervention theme; mapping proposed"
+  },
+  "05-5": {
+    "domain": "Fire protection & rescue",
+    "pillar": "P5 Post-crash",
+    "ideal": "Provide crash-site rescue and extrication services",
+    "evidence_base": "Direct intervention theme; mapping proposed"
+  },
+  "06-1": {
+    "domain": "Manufacturing & vehicle industry",
+    "pillar": "P1 Management",
+    "ideal": "Coordinate industry compliance with vehicle safety requirements",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "06-2": {
+    "domain": "Manufacturing & vehicle industry",
+    "pillar": "P2 Roads",
+    "ideal": "—",
+    "evidence_base": "Unpopulated: specific evidence needed"
+  },
+  "06-3": {
+    "domain": "Manufacturing & vehicle industry",
+    "pillar": "P3 Vehicles",
+    "ideal": "Apply vehicle safety and crashworthiness standards",
+    "evidence_base": "Direct intervention theme; mapping proposed"
+  },
+  "06-4": {
+    "domain": "Manufacturing & vehicle industry",
+    "pillar": "P4 Users",
+    "ideal": "Issue safety recalls and warn users about defective vehicles",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "06-5": {
+    "domain": "Manufacturing & vehicle industry",
+    "pillar": "P5 Post-crash",
+    "ideal": "—",
+    "evidence_base": "Unpopulated: specific evidence needed"
+  },
+  "07-1": {
+    "domain": "Construction & civil engineering",
+    "pillar": "P1 Management",
+    "ideal": "Integrate safety standards into road-construction procurement",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "07-2": {
+    "domain": "Construction & civil engineering",
+    "pillar": "P2 Roads",
+    "ideal": "Apply road safety audits to new road construction",
+    "evidence_base": "Direct intervention theme; mapping proposed"
+  },
+  "07-3": {
+    "domain": "Construction & civil engineering",
+    "pillar": "P3 Vehicles",
+    "ideal": "—",
+    "evidence_base": "Unpopulated: specific evidence needed"
+  },
+  "07-4": {
+    "domain": "Construction & civil engineering",
+    "pillar": "P4 Users",
+    "ideal": "Implement traffic management and protection at worksites",
+    "evidence_base": "Direct intervention theme; mapping proposed"
+  },
+  "07-5": {
+    "domain": "Construction & civil engineering",
+    "pillar": "P5 Post-crash",
+    "ideal": "Maintain emergency access during roadworks",
+    "evidence_base": "Direct intervention theme; mapping proposed"
+  },
+  "08-1": {
+    "domain": "Road infrastructure & network operations",
+    "pillar": "P1 Management",
+    "ideal": "Establish road authority safety-performance and maintenance plans",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "08-2": {
+    "domain": "Road infrastructure & network operations",
+    "pillar": "P2 Roads",
+    "ideal": "Conduct safety assessments and improve hazardous roads",
+    "evidence_base": "Direct intervention theme; mapping proposed"
+  },
+  "08-3": {
+    "domain": "Road infrastructure & network operations",
+    "pillar": "P3 Vehicles",
+    "ideal": "—",
+    "evidence_base": "Unpopulated: specific evidence needed"
+  },
+  "08-4": {
+    "domain": "Road infrastructure & network operations",
+    "pillar": "P4 Users",
+    "ideal": "Apply speed-management road design and traffic calming",
+    "evidence_base": "Direct intervention theme; mapping proposed"
+  },
+  "08-5": {
+    "domain": "Road infrastructure & network operations",
+    "pillar": "P5 Post-crash",
+    "ideal": "Plan incident access and rapid traffic clearance",
+    "evidence_base": "Direct intervention theme; mapping proposed"
+  },
+  "09-1": {
+    "domain": "Passenger & freight transport services",
+    "pillar": "P1 Management",
+    "ideal": "Implement operator road safety management requirements",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "09-2": {
+    "domain": "Passenger & freight transport services",
+    "pillar": "P2 Roads",
+    "ideal": "Design safe passenger stops and access routes",
+    "evidence_base": "Direct intervention theme; mapping proposed"
+  },
+  "09-3": {
+    "domain": "Passenger & freight transport services",
+    "pillar": "P3 Vehicles",
+    "ideal": "Require inspections and safety maintenance of commercial fleets",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "09-4": {
+    "domain": "Passenger & freight transport services",
+    "pillar": "P4 Users",
+    "ideal": "Enforce professional driving-hours and fatigue regulations",
+    "evidence_base": "Direct intervention theme; mapping proposed"
+  },
+  "09-5": {
+    "domain": "Passenger & freight transport services",
+    "pillar": "P5 Post-crash",
+    "ideal": "Create operator crash reporting and emergency procedures",
+    "evidence_base": "Direct intervention theme; mapping proposed"
+  },
+  "10-1": {
+    "domain": "Communications & digital systems",
+    "pillar": "P1 Management",
+    "ideal": "Integrate crash and exposure data across public agencies",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "10-2": {
+    "domain": "Communications & digital systems",
+    "pillar": "P2 Roads",
+    "ideal": "Deploy road hazard and traffic warning systems",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "10-3": {
+    "domain": "Communications & digital systems",
+    "pillar": "P3 Vehicles",
+    "ideal": "—",
+    "evidence_base": "Unpopulated: specific evidence needed"
+  },
+  "10-4": {
+    "domain": "Communications & digital systems",
+    "pillar": "P4 Users",
+    "ideal": "Provide timely road-user hazard and speed warnings",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "10-5": {
+    "domain": "Communications & digital systems",
+    "pillar": "P5 Post-crash",
+    "ideal": "Implement interoperable emergency call and dispatch systems",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "11-1": {
+    "domain": "Environmental protection",
+    "pillar": "P1 Management",
+    "ideal": "Integrate flood and extreme-weather risks into road safety plans",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "11-2": {
+    "domain": "Environmental protection",
+    "pillar": "P2 Roads",
+    "ideal": "Reduce road flooding and weather-related hazards through drainage",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "11-3": {
+    "domain": "Environmental protection",
+    "pillar": "P3 Vehicles",
+    "ideal": "—",
+    "evidence_base": "Unpopulated: specific evidence needed"
+  },
+  "11-4": {
+    "domain": "Environmental protection",
+    "pillar": "P4 Users",
+    "ideal": "—",
+    "evidence_base": "Unpopulated: specific evidence needed"
+  },
+  "11-5": {
+    "domain": "Environmental protection",
+    "pillar": "P5 Post-crash",
+    "ideal": "Coordinate incident response to weather-related road hazards",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "12-1": {
+    "domain": "Housing, urban development & amenities",
+    "pillar": "P1 Management",
+    "ideal": "Embed road-user safety into land-use and neighbourhood planning",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "12-2": {
+    "domain": "Housing, urban development & amenities",
+    "pillar": "P2 Roads",
+    "ideal": "Provide safe crossings, footpaths and lighting",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "12-3": {
+    "domain": "Housing, urban development & amenities",
+    "pillar": "P3 Vehicles",
+    "ideal": "—",
+    "evidence_base": "Unpopulated: specific evidence needed"
+  },
+  "12-4": {
+    "domain": "Housing, urban development & amenities",
+    "pillar": "P4 Users",
+    "ideal": "Plan connected walking and cycling networks",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "12-5": {
+    "domain": "Housing, urban development & amenities",
+    "pillar": "P5 Post-crash",
+    "ideal": "Protect emergency access in neighbourhood layouts",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "13-1": {
+    "domain": "Health and medical services",
+    "pillar": "P1 Management",
+    "ideal": "Integrate injury surveillance into road safety performance reporting",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "13-2": {
+    "domain": "Health and medical services",
+    "pillar": "P2 Roads",
+    "ideal": "Use injury data to prioritize high-risk road locations",
+    "evidence_base": "Direct intervention theme; mapping proposed"
+  },
+  "13-3": {
+    "domain": "Health and medical services",
+    "pillar": "P3 Vehicles",
+    "ideal": "—",
+    "evidence_base": "Unpopulated: specific evidence needed"
+  },
+  "13-4": {
+    "domain": "Health and medical services",
+    "pillar": "P4 Users",
+    "ideal": "Support programmes addressing impairment-related injury risk",
+    "evidence_base": "Direct intervention theme; mapping proposed"
+  },
+  "13-5": {
+    "domain": "Health and medical services",
+    "pillar": "P5 Post-crash",
+    "ideal": "Provide prehospital care, trauma systems and rehabilitation",
+    "evidence_base": "Direct intervention theme; mapping proposed"
+  },
+  "14-1": {
+    "domain": "Recreation, culture & community",
+    "pillar": "P1 Management",
+    "ideal": "Engage local community organizations in safety planning",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "14-2": {
+    "domain": "Recreation, culture & community",
+    "pillar": "P2 Roads",
+    "ideal": "Assess safety on routes to recreation sites",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "14-3": {
+    "domain": "Recreation, culture & community",
+    "pillar": "P3 Vehicles",
+    "ideal": "—",
+    "evidence_base": "Unpopulated: specific evidence needed"
+  },
+  "14-4": {
+    "domain": "Recreation, culture & community",
+    "pillar": "P4 Users",
+    "ideal": "Deliver community safety engagement linked to infrastructure/enforcement",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "14-5": {
+    "domain": "Recreation, culture & community",
+    "pillar": "P5 Post-crash",
+    "ideal": "—",
+    "evidence_base": "Unpopulated: specific evidence needed"
+  },
+  "15-1": {
+    "domain": "Education & training",
+    "pillar": "P1 Management",
+    "ideal": "Train road safety agencies and decision makers in Safe System principles",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "15-2": {
+    "domain": "Education & training",
+    "pillar": "P2 Roads",
+    "ideal": "Train road engineers in safety audits and design",
+    "evidence_base": "Direct intervention theme; mapping proposed"
+  },
+  "15-3": {
+    "domain": "Education & training",
+    "pillar": "P3 Vehicles",
+    "ideal": "Train vehicle inspectors on vehicle safety standards",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "15-4": {
+    "domain": "Education & training",
+    "pillar": "P4 Users",
+    "ideal": "Integrate road safety into school curricula alongside proven measures",
+    "evidence_base": "Direct intervention theme; mapping proposed"
+  },
+  "15-5": {
+    "domain": "Education & training",
+    "pillar": "P5 Post-crash",
+    "ideal": "Train first responders and community members in first aid",
+    "evidence_base": "Direct intervention theme; mapping proposed"
+  },
+  "16-1": {
+    "domain": "Social protection & victim support",
+    "pillar": "P1 Management",
+    "ideal": "Incorporate equity and disability effects in road safety planning",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "16-2": {
+    "domain": "Social protection & victim support",
+    "pillar": "P2 Roads",
+    "ideal": "Fund accessible walking and crossing infrastructure",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "16-3": {
+    "domain": "Social protection & victim support",
+    "pillar": "P3 Vehicles",
+    "ideal": "—",
+    "evidence_base": "Unpopulated: specific evidence needed"
+  },
+  "16-4": {
+    "domain": "Social protection & victim support",
+    "pillar": "P4 Users",
+    "ideal": "Consult people with disabilities on safe mobility design",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "16-5": {
+    "domain": "Social protection & victim support",
+    "pillar": "P5 Post-crash",
+    "ideal": "Provide rehabilitation and social support to injured road users",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "17-1": {
+    "domain": "Civil defence & disaster preparedness",
+    "pillar": "P1 Management",
+    "ideal": "Coordinate mass-casualty and incident plans with road safety agencies",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "17-2": {
+    "domain": "Civil defence & disaster preparedness",
+    "pillar": "P2 Roads",
+    "ideal": "Include road access in disaster evacuation planning",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "17-3": {
+    "domain": "Civil defence & disaster preparedness",
+    "pillar": "P3 Vehicles",
+    "ideal": "—",
+    "evidence_base": "Unpopulated: specific evidence needed"
+  },
+  "17-4": {
+    "domain": "Civil defence & disaster preparedness",
+    "pillar": "P4 Users",
+    "ideal": "Develop safe evacuation communication and travel instructions",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  },
+  "17-5": {
+    "domain": "Civil defence & disaster preparedness",
+    "pillar": "P5 Post-crash",
+    "ideal": "Exercise mass-casualty triage and emergency response plans",
+    "evidence_base": "Source-informed adaptation; mapping proposed"
+  }
+}

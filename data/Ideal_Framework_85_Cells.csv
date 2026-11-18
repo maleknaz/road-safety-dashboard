@@ -1,0 +1,86 @@
+﻿matrix_id,domain,pillar,ideal_intervention,evidence_base,defined
+01-1,Government leadership & administration,P1 Management,Adopt national road safety targets and lead-agency coordination,Source-informed adaptation; mapping proposed,True
+01-2,Government leadership & administration,P2 Roads,Coordinate road-owning agencies through interagency safety plans,Source-informed adaptation; mapping proposed,True
+01-3,Government leadership & administration,P3 Vehicles,Coordinate national vehicle-safety regulation and approval systems,Source-informed adaptation; mapping proposed,True
+01-4,Government leadership & administration,P4 Users,Develop multisectoral road-user safety action plans,Source-informed adaptation; mapping proposed,True
+01-5,Government leadership & administration,P5 Post-crash,Establish a coordinated national post-crash response system,Source-informed adaptation; mapping proposed,True
+02-1,Public finance & fiscal administration,P1 Management,"Fund a costed, results-based road safety programme",Source-informed adaptation; mapping proposed,True
+02-2,Public finance & fiscal administration,P2 Roads,Prioritize high-risk road safety infrastructure investments,Source-informed adaptation; mapping proposed,True
+02-3,Public finance & fiscal administration,P3 Vehicles,Budget for vehicle inspection and safety compliance capacity,Source-informed adaptation; mapping proposed,True
+02-4,Public finance & fiscal administration,P4 Users,Finance proven speed-management and enforcement programmes,Source-informed adaptation; mapping proposed,True
+02-5,Public finance & fiscal administration,P5 Post-crash,"Finance emergency dispatch, trauma and rehabilitation services",Source-informed adaptation; mapping proposed,True
+03-1,Police & traffic enforcement,P1 Management,"Coordinate high-visibility, data-led traffic enforcement",Source-informed adaptation; mapping proposed,True
+03-2,Police & traffic enforcement,P2 Roads,Enforce temporary roadwork traffic controls,Direct intervention theme; mapping proposed,True
+03-3,Police & traffic enforcement,P3 Vehicles,Inspect road vehicles for roadworthiness and legal compliance,Source-informed adaptation; mapping proposed,True
+03-4,Police & traffic enforcement,P4 Users,"Enforce speed limits, drink-driving and helmet/seat-belt laws",Direct intervention theme; mapping proposed,True
+03-5,Police & traffic enforcement,P5 Post-crash,Secure crash scenes and collect crash investigation data,Direct intervention theme; mapping proposed,True
+04-1,Justice & legal services,P1 Management,Provide legal framework and procedures for traffic offences,Source-informed adaptation; mapping proposed,True
+04-2,Justice & legal services,P2 Roads,Maintain legal processes concerning unsafe road infrastructure,Source-informed adaptation; mapping proposed,True
+04-3,Justice & legal services,P3 Vehicles,Apply legal remedies for defective or unsafe vehicles,Source-informed adaptation; mapping proposed,True
+04-4,Justice & legal services,P4 Users,Adjudicate serious traffic offences,Source-informed adaptation; mapping proposed,True
+04-5,Justice & legal services,P5 Post-crash,Ensure legal support and remedies for crash survivors,Source-informed adaptation; mapping proposed,True
+05-1,Fire protection & rescue,P1 Management,Coordinate emergency rescue service planning,Source-informed adaptation; mapping proposed,True
+05-2,Fire protection & rescue,P2 Roads,Plan emergency service access to road networks,Direct intervention theme; mapping proposed,True
+05-3,Fire protection & rescue,P3 Vehicles,Train responders in extrication from damaged vehicles,Source-informed adaptation; mapping proposed,True
+05-4,Fire protection & rescue,P4 Users,Train community and non-medical first responders,Direct intervention theme; mapping proposed,True
+05-5,Fire protection & rescue,P5 Post-crash,Provide crash-site rescue and extrication services,Direct intervention theme; mapping proposed,True
+06-1,Manufacturing & vehicle industry,P1 Management,Coordinate industry compliance with vehicle safety requirements,Source-informed adaptation; mapping proposed,True
+06-2,Manufacturing & vehicle industry,P2 Roads,—,Unpopulated: specific evidence needed,True
+06-3,Manufacturing & vehicle industry,P3 Vehicles,Apply vehicle safety and crashworthiness standards,Direct intervention theme; mapping proposed,True
+06-4,Manufacturing & vehicle industry,P4 Users,Issue safety recalls and warn users about defective vehicles,Source-informed adaptation; mapping proposed,True
+06-5,Manufacturing & vehicle industry,P5 Post-crash,—,Unpopulated: specific evidence needed,True
+07-1,Construction & civil engineering,P1 Management,Integrate safety standards into road-construction procurement,Source-informed adaptation; mapping proposed,True
+07-2,Construction & civil engineering,P2 Roads,Apply road safety audits to new road construction,Direct intervention theme; mapping proposed,True
+07-3,Construction & civil engineering,P3 Vehicles,—,Unpopulated: specific evidence needed,True
+07-4,Construction & civil engineering,P4 Users,Implement traffic management and protection at worksites,Direct intervention theme; mapping proposed,True
+07-5,Construction & civil engineering,P5 Post-crash,Maintain emergency access during roadworks,Direct intervention theme; mapping proposed,True
+08-1,Road infrastructure & network operations,P1 Management,Establish road authority safety-performance and maintenance plans,Source-informed adaptation; mapping proposed,True
+08-2,Road infrastructure & network operations,P2 Roads,Conduct safety assessments and improve hazardous roads,Direct intervention theme; mapping proposed,True
+08-3,Road infrastructure & network operations,P3 Vehicles,—,Unpopulated: specific evidence needed,True
+08-4,Road infrastructure & network operations,P4 Users,Apply speed-management road design and traffic calming,Direct intervention theme; mapping proposed,True
+08-5,Road infrastructure & network operations,P5 Post-crash,Plan incident access and rapid traffic clearance,Direct intervention theme; mapping proposed,True
+09-1,Passenger & freight transport services,P1 Management,Implement operator road safety management requirements,Source-informed adaptation; mapping proposed,True
+09-2,Passenger & freight transport services,P2 Roads,Design safe passenger stops and access routes,Direct intervention theme; mapping proposed,True
+09-3,Passenger & freight transport services,P3 Vehicles,Require inspections and safety maintenance of commercial fleets,Source-informed adaptation; mapping proposed,True
+09-4,Passenger & freight transport services,P4 Users,Enforce professional driving-hours and fatigue regulations,Direct intervention theme; mapping proposed,True
+09-5,Passenger & freight transport services,P5 Post-crash,Create operator crash reporting and emergency procedures,Direct intervention theme; mapping proposed,True
+10-1,Communications & digital systems,P1 Management,Integrate crash and exposure data across public agencies,Source-informed adaptation; mapping proposed,True
+10-2,Communications & digital systems,P2 Roads,Deploy road hazard and traffic warning systems,Source-informed adaptation; mapping proposed,True
+10-3,Communications & digital systems,P3 Vehicles,—,Unpopulated: specific evidence needed,True
+10-4,Communications & digital systems,P4 Users,Provide timely road-user hazard and speed warnings,Source-informed adaptation; mapping proposed,True
+10-5,Communications & digital systems,P5 Post-crash,Implement interoperable emergency call and dispatch systems,Source-informed adaptation; mapping proposed,True
+11-1,Environmental protection,P1 Management,Integrate flood and extreme-weather risks into road safety plans,Source-informed adaptation; mapping proposed,True
+11-2,Environmental protection,P2 Roads,Reduce road flooding and weather-related hazards through drainage,Source-informed adaptation; mapping proposed,True
+11-3,Environmental protection,P3 Vehicles,—,Unpopulated: specific evidence needed,True
+11-4,Environmental protection,P4 Users,—,Unpopulated: specific evidence needed,True
+11-5,Environmental protection,P5 Post-crash,Coordinate incident response to weather-related road hazards,Source-informed adaptation; mapping proposed,True
+12-1,"Housing, urban development & amenities",P1 Management,Embed road-user safety into land-use and neighbourhood planning,Source-informed adaptation; mapping proposed,True
+12-2,"Housing, urban development & amenities",P2 Roads,"Provide safe crossings, footpaths and lighting",Source-informed adaptation; mapping proposed,True
+12-3,"Housing, urban development & amenities",P3 Vehicles,—,Unpopulated: specific evidence needed,True
+12-4,"Housing, urban development & amenities",P4 Users,Plan connected walking and cycling networks,Source-informed adaptation; mapping proposed,True
+12-5,"Housing, urban development & amenities",P5 Post-crash,Protect emergency access in neighbourhood layouts,Source-informed adaptation; mapping proposed,True
+13-1,Health and medical services,P1 Management,Integrate injury surveillance into road safety performance reporting,Source-informed adaptation; mapping proposed,True
+13-2,Health and medical services,P2 Roads,Use injury data to prioritize high-risk road locations,Direct intervention theme; mapping proposed,True
+13-3,Health and medical services,P3 Vehicles,—,Unpopulated: specific evidence needed,True
+13-4,Health and medical services,P4 Users,Support programmes addressing impairment-related injury risk,Direct intervention theme; mapping proposed,True
+13-5,Health and medical services,P5 Post-crash,"Provide prehospital care, trauma systems and rehabilitation",Direct intervention theme; mapping proposed,True
+14-1,"Recreation, culture & community",P1 Management,Engage local community organizations in safety planning,Source-informed adaptation; mapping proposed,True
+14-2,"Recreation, culture & community",P2 Roads,Assess safety on routes to recreation sites,Source-informed adaptation; mapping proposed,True
+14-3,"Recreation, culture & community",P3 Vehicles,—,Unpopulated: specific evidence needed,True
+14-4,"Recreation, culture & community",P4 Users,Deliver community safety engagement linked to infrastructure/enforcement,Source-informed adaptation; mapping proposed,True
+14-5,"Recreation, culture & community",P5 Post-crash,—,Unpopulated: specific evidence needed,True
+15-1,Education & training,P1 Management,Train road safety agencies and decision makers in Safe System principles,Source-informed adaptation; mapping proposed,True
+15-2,Education & training,P2 Roads,Train road engineers in safety audits and design,Direct intervention theme; mapping proposed,True
+15-3,Education & training,P3 Vehicles,Train vehicle inspectors on vehicle safety standards,Source-informed adaptation; mapping proposed,True
+15-4,Education & training,P4 Users,Integrate road safety into school curricula alongside proven measures,Direct intervention theme; mapping proposed,True
+15-5,Education & training,P5 Post-crash,Train first responders and community members in first aid,Direct intervention theme; mapping proposed,True
+16-1,Social protection & victim support,P1 Management,Incorporate equity and disability effects in road safety planning,Source-informed adaptation; mapping proposed,True
+16-2,Social protection & victim support,P2 Roads,Fund accessible walking and crossing infrastructure,Source-informed adaptation; mapping proposed,True
+16-3,Social protection & victim support,P3 Vehicles,—,Unpopulated: specific evidence needed,True
+16-4,Social protection & victim support,P4 Users,Consult people with disabilities on safe mobility design,Source-informed adaptation; mapping proposed,True
+16-5,Social protection & victim support,P5 Post-crash,Provide rehabilitation and social support to injured road users,Source-informed adaptation; mapping proposed,True
+17-1,Civil defence & disaster preparedness,P1 Management,Coordinate mass-casualty and incident plans with road safety agencies,Source-informed adaptation; mapping proposed,True
+17-2,Civil defence & disaster preparedness,P2 Roads,Include road access in disaster evacuation planning,Source-informed adaptation; mapping proposed,True
+17-3,Civil defence & disaster preparedness,P3 Vehicles,—,Unpopulated: specific evidence needed,True
+17-4,Civil defence & disaster preparedness,P4 Users,Develop safe evacuation communication and travel instructions,Source-informed adaptation; mapping proposed,True
+17-5,Civil defence & disaster preparedness,P5 Post-crash,Exercise mass-casualty triage and emergency response plans,Source-informed adaptation; mapping proposed,True
