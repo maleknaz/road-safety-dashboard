@@ -25,14 +25,27 @@ def show(filename,height=1550):
     if not path.is_file():st.error(f"Missing: {filename}");return
     components.html(path.read_text(encoding="utf-8"),height=height,scrolling=True)
 
-labels=["Start here","Atlas","Taskforces","Existing documents","Bodies & strategies","Checklists for your taskforce","Country case studies","Download data"]
-files=["Dashboard_Overview.html","road_safety_atlas.html","who_has_task_forces.html","Existing_road_safety_documents.html","Bodies_Their_Road_Safety_Strategies.html","Checklists_for_Your_Task_Force.html","Case_Studies.html"]
+# The checklist is the final tab. Research datasets are not exposed for download.
+labels=[
+    "Start here",
+    "Atlas",
+    "Taskforces",
+    "Existing documents",
+    "Bodies & strategies",
+    "Country case studies",
+    "Checklists for your taskforce",
+]
+files=[
+    "Dashboard_Overview.html",
+    "road_safety_atlas.html",
+    "who_has_task_forces.html",
+    "Existing_road_safety_documents.html",
+    "Bodies_Their_Road_Safety_Strategies.html",
+    "Case_Studies.html",
+    "Checklists_for_Your_Task_Force.html",
+]
+
 tabs=st.tabs(labels)
-for i,f in enumerate(files):
-    with tabs[i]:show(f,2000 if i in (1,2,3,4,6) else 1500)
-with tabs[7]:
-    st.markdown("### Download the research evidence")
-    st.caption("These records include incomplete and provisional reviews. Do not treat absent evidence as a negative country finding.")
-    for path in sorted((ROOT/"data").iterdir()):
-        if path.suffix.lower() not in (".csv",".json"):continue
-        st.download_button(path.name,path.read_bytes(),file_name=path.name,mime="text/csv" if path.suffix==".csv" else "application/json",key=path.name)
+for label, filename, tab in zip(labels, files, tabs):
+    with tab:
+        show(filename, 1500 if filename in ("Dashboard_Overview.html", "Checklists_for_Your_Task_Force.html") else 2000)
