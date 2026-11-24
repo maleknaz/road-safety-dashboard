@@ -196,7 +196,6 @@ def _country_findings(data:dict,country:str):
         for r in linked:
             with st.expander(r['domain']+' • '+(r.get('institutional_relationship') or 'Research evidence')):
                 st.write('**Institution**: '+(r.get('responsible_institution') or 'Not documented'))
-                st.write('**Membership**: '+(r.get('formal_membership') or 'Not verified'))
                 st.write('**Responsibility**: '+(r.get('functional_responsibility') or 'Not verified'))
                 st.write('**Qualification**: '+(r.get('classification_rationale') or 'Not stated'))
                 _link(r.get('source_url',''))
@@ -274,6 +273,110 @@ def _benchmark(data:dict,country:str):
                        mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
 
 
+def _domain_grid_styles() -> str:
+    """Light, readable cards and one full-width comparison table."""
+    return """<style>
+    .rs-domain-card-title{font-weight:750;color:#17324a;line-height:1.25;
+        font-size:14px;min-height:3.6em;margin-bottom:10px;overflow-wrap:anywhere;}
+    .rs-domain-card-meta{font-size:12px;line-height:1.5;color:#36546b;
+        margin:5px 0;overflow-wrap:anywhere;}
+    .rs-domain-card-meta strong{color:#17324a;font-weight:700;}
+    .rs-domain-comparison-wrap{overflow-x:auto;border:1px solid #ccdfe7;
+        border-radius:9px;background:#fff;margin:8px 0 16px;}
+    .rs-domain-comparison-table{width:100%;border-collapse:collapse;
+        table-layout:fixed;font-size:13px;color:#17324a;background:#fff;}
+    .rs-domain-comparison-table thead th{background:#eef6fa;color:#12384d;
+        font-weight:750;text-align:left;padding:12px 14px;border-bottom:1px solid #bcd3df;}
+    .rs-domain-comparison-table th:first-child{width:19%;}
+    .rs-domain-comparison-table th,.rs-domain-comparison-table td{
+        padding:11px 13px;text-align:left;vertical-align:top;
+        overflow-wrap:anywhere;border-bottom:1px solid #dce7ed;}
+    .rs-domain-comparison-table tbody th{font-weight:650;background:#f6fafc;color:#25475b;}
+    .rs-domain-comparison-table tbody tr:last-child td,
+    .rs-domain-comparison-table tbody tr:last-child th{border-bottom:none;}
+    .rs-domain-comparison-table a{color:#08798f;text-decoration:underline;}
+    @media(max-width:800px){.rs-domain-card-title{min-height:0;}
+        .rs-domain-comparison-table{min-width:610px;}}
+    </style>"""
+
+
+def _domain_card_html(row:dict,country:str,second:str) -> str:
+    """A compact summary of SOURCE COVERAGE only, not a performance score."""
+    def line(name:str) -> str:
+        linked=bool(row[name].get('source_url'))
+        status='Linked source' if linked else 'No linked record'
+        return ('<div class="rs-domain-card-meta"><strong>'+escape(name)+'</strong>: '
+                +escape(status)+'</div>')
+    return ('<div class="rs-domain-card-title">'+escape(row['domain'])+'</div>'
+            +line(country)+line(second))
+
+
+def _domain_comparison_table(row:dict,country:str,second:str) -> str:
+    """Safe, source-linked domain detail table without the repeated membership field."""
+    def cell_text(name:str,field:str,default:str) -> str:
+        return escape(str(row[name].get(field) or default))
+    def source_cell(name:str) -> str:
+        source=ev.url(row[name].get('source_url',''))
+        return ('<a href="'+escape(source,quote=True)+'" target="_blank" '
+                'rel="noopener noreferrer">Open source</a>') if source else 'No linked source'
+    def table_row(label:str,values:tuple[str,str]) -> str:
+        return ('<tr><th scope="row">'+escape(label)+'</th><td>'+values[0]
+                +'</td><td>'+values[1]+'</td></tr>')
+    field_rows=[
+        ('Evidence status','evidence','No linked record'),
+        ('Institution','responsible_institution','Not established in reviewed sources'),
+        ('Function','functional_responsibility','Not established in reviewed sources'),
+        ('Implementation','implementation_evidence','Not established in reviewed sources'),
+        ('Research qualification','rationale','No additional qualification supplied'),
+    ]
+    rows=''.join(table_row(label,(cell_text(country,field,default),
+                                   cell_text(second,field,default)))
+                 for label,field,default in field_rows)
+    rows+=table_row('Supporting source',(source_cell(country),source_cell(second)))
+    return ('<div class="rs-domain-comparison-wrap"><table class="rs-domain-comparison-table">'
+            '<thead><tr><th scope="col">Evidence field</th><th scope="col">'
+            +escape(country)+'</th><th scope="col">'+escape(second)
+            +'</th></tr></thead><tbody>'+rows+'</tbody></table></div>')
+
+
+def _select_domain(state_key: str, domain: str) -> None:
+    """Streamlit applies button callbacks before rebuilding the fragment UI."""
+    st.session_state[state_key] = domain
+
+
+def _render_domain_grid(rows: list[dict], country: str, second: str) -> None:
+    """Four clickable domain cards per row, with a full-width detail table."""
+    st.subheader('Institutional comparison by domain')
+    st.caption('Select a domain card to see the full side-by-side evidence table. '
+               'A missing linked record is an evidence gap, not proof of institutional absence.')
+    selection_key='rs_selected_domain_'+_slug(country)+'_'+_slug(second)
+    available_domains=[item['domain'] for item in rows]
+    if available_domains and st.session_state.get(selection_key) not in available_domains:
+        # Start with a domain for which at least one country has evidence.
+        first_linked=next((item for item in rows
+                           if item[country]['source_url'] or item[second]['source_url']),rows[0])
+        st.session_state[selection_key]=first_linked['domain']
+    st.markdown(_domain_grid_styles(),unsafe_allow_html=True)
+    # Four domains per row, not seventeen full-width accordion sections.
+    for offset in range(0,len(rows),4):
+        cols=st.columns(4,gap='small')
+        for position,item in enumerate(rows[offset:offset+4]):
+            idx=offset+position
+            active=st.session_state.get(selection_key)==item['domain']
+            with cols[position]:
+                with st.container(border=True):
+                    st.markdown(_domain_card_html(item,country,second),unsafe_allow_html=True)
+                    st.button('View details' if not active else 'Selected domain',
+                              key='rs_domain_view_'+_slug(country)+'_'+_slug(second)+'_'+str(idx),
+                              use_container_width=True,type='primary' if active else 'secondary',
+                              on_click=_select_domain,args=(selection_key,item['domain']))
+    chosen=next((item for item in rows if item['domain']==st.session_state.get(selection_key)),None)
+    if chosen:
+        st.markdown('#### '+escape(chosen['domain']))
+        st.markdown(_domain_comparison_table(chosen,country,second),unsafe_allow_html=True)
+        st.caption('Evidence status reflects the reviewed source records, not national performance.')
+
+
 def _pairwise(data:dict,country:str):
     choices=[c for c in data['countries'] if c!=country]
     # A shared comparison selector needs a valid value when the PRIMARY country
@@ -293,22 +396,7 @@ def _pairwise(data:dict,country:str):
     c2.metric(second+' • source-linked domains',f"{b['Institutional domains with sources']} / {b['Total domains']}")
     st.write(f"The reviewed dataset has {a['Source-linked checklist items']} intervention-specific source-linked items for {country} "
              f"and {b['Source-linked checklist items']} for {second}. This is **not** a ranking of road safety performance.")
-    st.subheader('Institutional comparison by domain')
-    rows=ev.compare(data,country,second)
-    for item in rows:
-        with st.expander(item['domain']):
-            col1,col2=st.columns(2)
-            for col,n in ((col1,country),(col2,second)):
-                d=item[n]
-                with col:
-                    st.markdown('**'+n+'**')
-                    st.caption(d['evidence'])
-                    st.write('**Institution**: '+(d['responsible_institution'] or 'Not verified'))
-                    st.write('**Membership**: '+(d['membership'] or 'Not verified'))
-                    st.write('**Function**: '+(d['functional_responsibility'] or 'Not verified'))
-                    st.write('**Implementation**: '+(d['implementation_evidence'] or 'Not verified'))
-                    if d['rationale']:st.caption(d['rationale'])
-                    _link(d['source_url'])
+    _render_domain_grid(ev.compare(data,country,second),country,second)
     st.subheader('Intervention-level differences in documented evidence')
     first=ev.checklist_prefill(data,country);other=ev.checklist_prefill(data,second)
     available=[(x,y) for x,y in zip(first,other) if x['source_urls'] or y['source_urls']]

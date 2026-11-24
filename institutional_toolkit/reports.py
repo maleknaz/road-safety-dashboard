@@ -45,7 +45,6 @@ def word_country(data: dict, country: str) -> bytes:
     for r in linked:
         doc.add_heading(r['domain'],2)
         doc.add_paragraph('Institution: '+(r.get('responsible_institution') or 'Not stated'))
-        doc.add_paragraph('Membership: '+(r.get('formal_membership') or 'Not verified'))
         doc.add_paragraph('Role: '+(r.get('functional_responsibility') or 'Not verified'))
         doc.add_paragraph('Limitations: '+(r.get('classification_rationale') or 'Not specified'))
         doc.add_paragraph('Evidence: '+r['source_url'])
@@ -104,7 +103,6 @@ def word_comparison(data: dict, a: str, b: str) -> bytes:
             v=row[country]
             doc.add_paragraph(f"{country} | {v['evidence']}")
             doc.add_paragraph('Institution: '+(v['responsible_institution'] or 'Not verified'))
-            doc.add_paragraph('Membership: '+(v['membership'] or 'Not verified'))
             doc.add_paragraph('Function: '+(v['functional_responsibility'] or 'Not verified'))
             doc.add_paragraph('Source: '+(v['source_url'] or 'No source linked'))
             if v['rationale']:doc.add_paragraph('Qualification: '+v['rationale'])
