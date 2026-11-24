@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{margin:0;background:#f8fbfd;font-family:Segoe UI,Arial,sans-serif}.st-key-road_safety_toolkit{padding:0 24px 36px;background:#f8fbfd;color:#17324a}.st-key-road_safety_toolkit .stMarkdownContainer :is(h1,h2,h3,h4){color:#12334a!important}</style></head><body><div class="st-key-road_safety_toolkit"><div class="stMarkdownContainer"><style>
+/* Toolkit-only masthead, matched to the Atlas pages (70px bar + 320px hero).
+   This is scoped to the Streamlit Toolkit container; other six tabs are untouched. */
+.st-key-road_safety_toolkit .rs-toolkit-topbar,
+.st-key-road_safety_toolkit .rs-toolkit-topbar *,
+.st-key-road_safety_toolkit .rs-toolkit-hero,
+.st-key-road_safety_toolkit .rs-toolkit-hero *,
+.st-key-road_safety_toolkit .rs-toolkit-guide,
+.st-key-road_safety_toolkit .rs-toolkit-guide * {box-sizing:border-box;}
+.st-key-road_safety_toolkit .rs-toolkit-topbar,
+.st-key-road_safety_toolkit .rs-toolkit-hero {margin-left:-24px!important;margin-right:-24px!important;}
+.st-key-road_safety_toolkit .rs-toolkit-topbar {height:70px!important;min-height:70px!important;max-height:70px!important;
+    background:#ffffff!important;border-bottom:1px solid #dbe5eb!important;overflow:hidden!important;}
+.st-key-road_safety_toolkit .rs-toolkit-tricolor {height:6px;background:linear-gradient(90deg,#077c96 0 42%,#d4ac38 42% 48%,#16394f 48%);}
+.st-key-road_safety_toolkit .rs-toolkit-topbar-inner {max-width:1580px;margin:0 auto;height:64px;padding:0 30px;
+    display:flex;align-items:center;justify-content:space-between;gap:18px;}
+.st-key-road_safety_toolkit .rs-toolkit-brand {display:flex;align-items:center;gap:12px;color:#10334b!important;
+    font-size:13px;font-weight:800;letter-spacing:.10em;text-transform:uppercase;}
+.st-key-road_safety_toolkit .rs-toolkit-brand-mark {width:8px;height:27px;border-radius:3px;background:#0796ad;flex-shrink:0;}
+.st-key-road_safety_toolkit .rs-toolkit-brand-sub {color:#58798c!important;letter-spacing:0;text-transform:none;font-size:12px;font-weight:500;}
+.st-key-road_safety_toolkit .rs-toolkit-topbar-note {color:#647d8c!important;font-size:12px;}
+.st-key-road_safety_toolkit .rs-toolkit-hero {position:relative;isolation:isolate;overflow:hidden;
+    height:320px!important;min-height:320px!important;max-height:320px!important;
+    color:#ffffff!important;background:linear-gradient(114deg,#0c2945 0%,#103d67 66%,#116f9c 120%)!important;}
+.st-key-road_safety_toolkit .rs-toolkit-hero:before {content:"";position:absolute;right:-150px;top:-245px;
+    width:750px;height:750px;border-radius:50%;border:1px solid rgba(255,255,255,.14);
+    box-shadow:0 0 0 73px rgba(255,255,255,.025),0 0 0 146px rgba(255,255,255,.022),0 0 0 222px rgba(255,255,255,.02);pointer-events:none;}
+.st-key-road_safety_toolkit .rs-toolkit-hero:after {content:"";position:absolute;left:0;top:0;height:100%;width:5px;background:#0796ad;}
+.st-key-road_safety_toolkit .rs-toolkit-hero-inner {position:relative;z-index:1;max-width:1580px;
+    margin:0 auto;padding:47px 30px 28px;}
+.st-key-road_safety_toolkit .rs-toolkit-hero-kicker {color:#a7e2ee!important;font-size:12px;
+    font-weight:750;letter-spacing:.12em;text-transform:uppercase;margin:0 0 12px;}
+.st-key-road_safety_toolkit .rs-toolkit-hero h1 {color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;
+    font-size:35px!important;line-height:1.17!important;letter-spacing:-.025em!important;
+    font-weight:760!important;margin:0 0 16px!important;max-width:1250px;}
+.st-key-road_safety_toolkit .rs-toolkit-hero h1 em {font-style:normal;color:#80d5f0!important;
+    -webkit-text-fill-color:#80d5f0!important;}
+.st-key-road_safety_toolkit .rs-toolkit-hero p {color:#e1edf5!important;
+    -webkit-text-fill-color:#e1edf5!important;font-size:15px!important;line-height:1.6!important;
+    max-width:840px;margin:0!important;}
+.st-key-road_safety_toolkit .rs-toolkit-hero-tags {display:flex;flex-wrap:wrap;gap:9px;margin-top:20px;}
+.st-key-road_safety_toolkit .rs-toolkit-hero-tags span {color:#e6f8fa!important;-webkit-text-fill-color:#e6f8fa!important;
+    border:1px solid rgba(181,224,235,.48);border-radius:20px;padding:5px 11px;font-size:11px;font-weight:600;background:rgba(255,255,255,.06);}
+.st-key-road_safety_toolkit .rs-toolkit-guide {max-width:1580px;margin:0 auto 21px;padding-top:26px;}
+.st-key-road_safety_toolkit .rs-toolkit-guide h2 {color:#10334b!important;-webkit-text-fill-color:#10334b!important;
+    font-size:21px!important;line-height:1.3!important;font-weight:760!important;margin:0 0 13px!important;}
+.st-key-road_safety_toolkit .rs-toolkit-option-grid {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;}
+.st-key-road_safety_toolkit .rs-toolkit-option {background:#ffffff!important;border:1px solid #d8e4eb!important;
+    border-top:3px solid #078da0!important;border-radius:8px;min-height:134px;padding:16px 17px;}
+.st-key-road_safety_toolkit .rs-toolkit-option h3 {color:#12384e!important;-webkit-text-fill-color:#12384e!important;
+    font-size:15px!important;line-height:1.3!important;margin:0 0 8px!important;font-weight:750!important;}
+.st-key-road_safety_toolkit .rs-toolkit-option p {color:#3b576b!important;-webkit-text-fill-color:#3b576b!important;
+    font-size:13px!important;line-height:1.5!important;margin:0!important;}
+.st-key-road_safety_toolkit .rs-toolkit-method {margin:14px 0 0;padding:12px 16px;
+    border-left:4px solid #078da0;background:#eef7fa!important;border-radius:5px;
+    color:#284a60!important;-webkit-text-fill-color:#284a60!important;font-size:13px;line-height:1.55;}
+.st-key-road_safety_toolkit .rs-toolkit-method strong {color:#10334b!important;-webkit-text-fill-color:#10334b!important;}
+@media(max-width:1050px){.st-key-road_safety_toolkit .rs-toolkit-option-grid {grid-template-columns:repeat(2,minmax(0,1fr));}
+    .st-key-road_safety_toolkit .rs-toolkit-option {min-height:125px;}}
+@media(max-width:720px){
+    .st-key-road_safety_toolkit .rs-toolkit-topbar,.st-key-road_safety_toolkit .rs-toolkit-hero {margin-left:-12px!important;margin-right:-12px!important;}
+    .st-key-road_safety_toolkit .rs-toolkit-topbar-inner {padding:0 14px;}
+    .st-key-road_safety_toolkit .rs-toolkit-brand {font-size:11px;letter-spacing:.045em;gap:8px;}
+    .st-key-road_safety_toolkit .rs-toolkit-brand-sub,.st-key-road_safety_toolkit .rs-toolkit-topbar-note {display:none;}
+    .st-key-road_safety_toolkit .rs-toolkit-hero {height:auto!important;min-height:320px!important;max-height:none!important;}
+    .st-key-road_safety_toolkit .rs-toolkit-hero-inner {padding:38px 18px 34px;}
+    .st-key-road_safety_toolkit .rs-toolkit-hero h1 {font-size:28px!important;}
+    .st-key-road_safety_toolkit .rs-toolkit-hero p {font-size:14px!important;}
+    .st-key-road_safety_toolkit .rs-toolkit-option-grid {grid-template-columns:1fr;}
+    .st-key-road_safety_toolkit .rs-toolkit-option {min-height:0;}
+    .st-key-road_safety_toolkit .rs-toolkit-guide {padding-top:20px;}
+}
+</style>
+<div class="rs-toolkit-topbar" role="banner">
+  <div class="rs-toolkit-tricolor"></div>
+  <div class="rs-toolkit-topbar-inner">
+    <div class="rs-toolkit-brand"><span class="rs-toolkit-brand-mark"></span>Global Road Safety <span class="rs-toolkit-brand-sub">/ Institutional tools</span></div>
+    <span class="rs-toolkit-topbar-note">Country evidence · Comparison · Action planning</span>
+  </div>
+</div>
+<section class="rs-toolkit-hero" aria-labelledby="rs-toolkit-heading">
+  <div class="rs-toolkit-hero-inner">
+    <div class="rs-toolkit-hero-kicker">EVIDENCE-LED GOVERNANCE AND COORDINATION</div>
+    <h1 id="rs-toolkit-heading">Road Safety <em>Institutional Toolkit</em></h1>
+    <p>Understand your country's road safety coordination arrangements, compare documented practices with other countries, and prepare an actionable institutional checklist grounded in available research.</p>
+    <div class="rs-toolkit-hero-tags"><span>Country-specific research</span><span>Source-linked comparisons</span><span>Guided next steps</span></div>
+  </div>
+</section>
+<section class="rs-toolkit-guide" aria-labelledby="rs-toolkit-guide-heading">
+  <h2 id="rs-toolkit-guide-heading">How to use this toolkit</h2>
+  <div class="rs-toolkit-option-grid">
+    <article class="rs-toolkit-option"><h3>Explore country findings</h3><p>Review documented institutions and their roles, inspect source links, and ask questions of the indexed country evidence.</p></article>
+    <article class="rs-toolkit-option"><h3>Benchmark internationally</h3><p>Compare research coverage across countries. These are evidence-coverage comparisons, not rankings of road safety performance.</p></article>
+    <article class="rs-toolkit-option"><h3>Compare with another country</h3><p>Select a peer to see side-by-side institutional evidence and differences by domain, with links to supporting sources.</p></article>
+    <article class="rs-toolkit-option"><h3>Generate my institutional checklist</h3><p>Answer optional questions, receive a research-prefilled 72-intervention checklist, and identify follow-up actions to verify gaps.</p></article>
+  </div>
+  <p class="rs-toolkit-method"><strong>How the intelligence works.</strong> The toolkit retrieves source-linked records for the selected country, rather than beginning a new web investigation. When AI access is configured, you can request citation-checked analysis and limited searches for newer official information. Missing evidence and user responses remain unverified until reviewed.</p>
+</section></div></div></body></html>

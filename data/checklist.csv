@@ -1,0 +1,86 @@
+matrix_id,domain,pillar,ideal_task,ideal_intervention,eligible
+01-1,Government leadership & administration,P1 Management,Safety strategy and coordination,Adopt national road safety targets and lead-agency coordination,True
+01-2,Government leadership & administration,P2 Roads,Road authority coordination,Coordinate road-owning agencies through interagency safety plans,True
+01-3,Government leadership & administration,P3 Vehicles,Vehicle regulatory oversight,Coordinate national vehicle-safety regulation and approval systems,True
+01-4,Government leadership & administration,P4 Users,National and local action plans,Develop multisectoral road-user safety action plans,True
+01-5,Government leadership & administration,P5 Post-crash,Response governance,Establish a coordinated national post-crash response system,True
+02-1,Public finance & fiscal administration,P1 Management,Safety budgets and grants,"Fund a costed, results-based road safety programme",True
+02-2,Public finance & fiscal administration,P2 Roads,Infrastructure investments,Prioritize high-risk road safety infrastructure investments,True
+02-3,Public finance & fiscal administration,P3 Vehicles,Vehicle safety incentives,Budget for vehicle inspection and safety compliance capacity,True
+02-4,Public finance & fiscal administration,P4 Users,Education and enforcement funding,Finance proven speed-management and enforcement programmes,True
+02-5,Public finance & fiscal administration,P5 Post-crash,Emergency care investments,"Finance emergency dispatch, trauma and rehabilitation services",True
+03-1,Police & traffic enforcement,P1 Management,Enforcement strategies,"Coordinate high-visibility, data-led traffic enforcement",True
+03-2,Police & traffic enforcement,P2 Roads,Work-zone and road controls,Enforce temporary roadwork traffic controls,True
+03-3,Police & traffic enforcement,P3 Vehicles,Vehicle compliance inspections,Inspect road vehicles for roadworthiness and legal compliance,True
+03-4,Police & traffic enforcement,P4 Users,"Speed, impairment and restraint enforcement","Enforce speed limits, drink-driving and helmet/seat-belt laws",True
+03-5,Police & traffic enforcement,P5 Post-crash,Crash investigation and scene control,Secure crash scenes and collect crash investigation data,True
+04-1,Justice & legal services,P1 Management,Traffic legislation and adjudication,Provide legal framework and procedures for traffic offences,True
+04-2,Justice & legal services,P2 Roads,Road authority liability,Maintain legal processes concerning unsafe road infrastructure,True
+04-3,Justice & legal services,P3 Vehicles,Defective product litigation,Apply legal remedies for defective or unsafe vehicles,True
+04-4,Justice & legal services,P4 Users,Traffic offence adjudication,Adjudicate serious traffic offences,True
+04-5,Justice & legal services,P5 Post-crash,Victim rights and legal remedies,Ensure legal support and remedies for crash survivors,True
+05-1,Fire protection & rescue,P1 Management,Rescue service planning,Coordinate emergency rescue service planning,True
+05-2,Fire protection & rescue,P2 Roads,Access and rescue route plans,Plan emergency service access to road networks,True
+05-3,Fire protection & rescue,P3 Vehicles,Vehicle extrication readiness,Train responders in extrication from damaged vehicles,True
+05-4,Fire protection & rescue,P4 Users,Community rescue readiness,Train community and non-medical first responders,True
+05-5,Fire protection & rescue,P5 Post-crash,Extrication and rescue services,Provide crash-site rescue and extrication services,True
+06-1,Manufacturing & vehicle industry,P1 Management,Industrial safety policy,Coordinate industry compliance with vehicle safety requirements,True
+06-2,Manufacturing & vehicle industry,P2 Roads,Road equipment manufacture,—,False
+06-3,Manufacturing & vehicle industry,P3 Vehicles,Vehicle and component certification,Apply vehicle safety and crashworthiness standards,True
+06-4,Manufacturing & vehicle industry,P4 Users,Product warnings and recalls,Issue safety recalls and warn users about defective vehicles,True
+06-5,Manufacturing & vehicle industry,P5 Post-crash,Vehicle rescue-access design,—,False
+07-1,Construction & civil engineering,P1 Management,Construction regulations,Integrate safety standards into road-construction procurement,True
+07-2,Construction & civil engineering,P2 Roads,Safe road construction,Apply road safety audits to new road construction,True
+07-3,Construction & civil engineering,P3 Vehicles,Work vehicle safety,—,False
+07-4,Construction & civil engineering,P4 Users,Work-zone worker and user safety,Implement traffic management and protection at worksites,True
+07-5,Construction & civil engineering,P5 Post-crash,Emergency access during works,Maintain emergency access during roadworks,True
+08-1,Road infrastructure & network operations,P1 Management,Network management,Establish road authority safety-performance and maintenance plans,True
+08-2,Road infrastructure & network operations,P2 Roads,Safe design and maintenance,Conduct safety assessments and improve hazardous roads,True
+08-3,Road infrastructure & network operations,P3 Vehicles,Infrastructure–vehicle interfaces,—,False
+08-4,Road infrastructure & network operations,P4 Users,Traffic and speed management,Apply speed-management road design and traffic calming,True
+08-5,Road infrastructure & network operations,P5 Post-crash,Incident access and clearance,Plan incident access and rapid traffic clearance,True
+09-1,Passenger & freight transport services,P1 Management,Operator regulation,Implement operator road safety management requirements,True
+09-2,Passenger & freight transport services,P2 Roads,Safe stops and routing,Design safe passenger stops and access routes,True
+09-3,Passenger & freight transport services,P3 Vehicles,Commercial fleet safety,Require inspections and safety maintenance of commercial fleets,True
+09-4,Passenger & freight transport services,P4 Users,Professional driver and fatigue rules,Enforce professional driving-hours and fatigue regulations,True
+09-5,Passenger & freight transport services,P5 Post-crash,Transport incident plans,Create operator crash reporting and emergency procedures,True
+10-1,Communications & digital systems,P1 Management,Road data infrastructure,Integrate crash and exposure data across public agencies,True
+10-2,Communications & digital systems,P2 Roads,Connected road systems,Deploy road hazard and traffic warning systems,True
+10-3,Communications & digital systems,P3 Vehicles,Vehicle communications interoperability,—,False
+10-4,Communications & digital systems,P4 Users,Road safety alerts,Provide timely road-user hazard and speed warnings,True
+10-5,Communications & digital systems,P5 Post-crash,Emergency communication systems,Implement interoperable emergency call and dispatch systems,True
+11-1,Environmental protection,P1 Management,Hazard and environmental risk policy,Integrate flood and extreme-weather risks into road safety plans,True
+11-2,Environmental protection,P2 Roads,"Flooding, drainage, visibility",Reduce road flooding and weather-related hazards through drainage,True
+11-3,Environmental protection,P3 Vehicles,No direct intervention proposed,—,False
+11-4,Environmental protection,P4 Users,Air-quality and active-mobility interface,—,False
+11-5,Environmental protection,P5 Post-crash,Hazardous incident mitigation,Coordinate incident response to weather-related road hazards,True
+12-1,"Housing, urban development & amenities",P1 Management,Safe mobility in land-use plans,Embed road-user safety into land-use and neighbourhood planning,True
+12-2,"Housing, urban development & amenities",P2 Roads,Street lighting and neighbourhood layout,"Provide safe crossings, footpaths and lighting",True
+12-3,"Housing, urban development & amenities",P3 Vehicles,No direct intervention proposed,—,False
+12-4,"Housing, urban development & amenities",P4 Users,Safe walking and cycling access,Plan connected walking and cycling networks,True
+12-5,"Housing, urban development & amenities",P5 Post-crash,Emergency vehicle access,Protect emergency access in neighbourhood layouts,True
+13-1,Health and medical services,P1 Management,Injury surveillance and health strategy,Integrate injury surveillance into road safety performance reporting,True
+13-2,Health and medical services,P2 Roads,Injury prevention evidence,Use injury data to prioritize high-risk road locations,True
+13-3,Health and medical services,P3 Vehicles,No direct intervention proposed,—,False
+13-4,Health and medical services,P4 Users,Impairment and injury prevention,Support programmes addressing impairment-related injury risk,True
+13-5,Health and medical services,P5 Post-crash,"EMS, trauma care and rehabilitation","Provide prehospital care, trauma systems and rehabilitation",True
+14-1,"Recreation, culture & community",P1 Management,Community partnerships,Engage local community organizations in safety planning,True
+14-2,"Recreation, culture & community",P2 Roads,Recreational route safety,Assess safety on routes to recreation sites,True
+14-3,"Recreation, culture & community",P3 Vehicles,No direct intervention proposed,—,False
+14-4,"Recreation, culture & community",P4 Users,Community safety outreach,Deliver community safety engagement linked to infrastructure/enforcement,True
+14-5,"Recreation, culture & community",P5 Post-crash,No direct intervention proposed,—,False
+15-1,Education & training,P1 Management,Education standards,Train road safety agencies and decision makers in Safe System principles,True
+15-2,Education & training,P2 Roads,Road engineering training,Train road engineers in safety audits and design,True
+15-3,Education & training,P3 Vehicles,Vehicle safety technical training,Train vehicle inspectors on vehicle safety standards,True
+15-4,Education & training,P4 Users,School and driver education,Integrate road safety into school curricula alongside proven measures,True
+15-5,Education & training,P5 Post-crash,First aid and responder training,Train first responders and community members in first aid,True
+16-1,Social protection & victim support,P1 Management,Equity and injury burden strategy,Incorporate equity and disability effects in road safety planning,True
+16-2,Social protection & victim support,P2 Roads,Accessibility funding,Fund accessible walking and crossing infrastructure,True
+16-3,Social protection & victim support,P3 Vehicles,No direct intervention proposed,—,False
+16-4,Social protection & victim support,P4 Users,Vulnerable user inclusion,Consult people with disabilities on safe mobility design,True
+16-5,Social protection & victim support,P5 Post-crash,"Victim, disability and survivor benefits",Provide rehabilitation and social support to injured road users,True
+17-1,Civil defence & disaster preparedness,P1 Management,Disaster response coordination,Coordinate mass-casualty and incident plans with road safety agencies,True
+17-2,Civil defence & disaster preparedness,P2 Roads,Evacuation road planning,Include road access in disaster evacuation planning,True
+17-3,Civil defence & disaster preparedness,P3 Vehicles,Emergency fleet readiness,—,False
+17-4,Civil defence & disaster preparedness,P4 Users,Evacuation travel guidance,Develop safe evacuation communication and travel instructions,True
+17-5,Civil defence & disaster preparedness,P5 Post-crash,Mass casualty response,Exercise mass-casualty triage and emergency response plans,True
