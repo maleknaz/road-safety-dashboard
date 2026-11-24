@@ -17,6 +17,38 @@ def _slug(country: str)->str:
     return re.sub(r'[^A-Za-z0-9]+','_',country).strip('_') or 'Country'
 
 
+def _context_changed(kind: str) -> None:
+    """Record a country or mode switch before Streamlit's automatic rerun.
+
+    Each rerun derives the page from the CURRENT country and comparison
+    selection. A monotonic revision makes the switch explicit and supports QA.
+    Existing country-specific user drafts are intentionally preserved.
+    """
+    st.session_state['rs_context_revision'] = st.session_state.get('rs_context_revision', 0) + 1
+    if kind == 'country':
+        st.session_state['rs_previous_primary_country'] = st.session_state.get('rs_context_country')
+        st.session_state['rs_context_country'] = st.session_state.get('rs_toolkit_country')
+        st.session_state.pop('rs_open_legacy', None)
+    elif kind == 'mode':
+        st.session_state['rs_context_mode'] = st.session_state.get('rs_toolkit_mode')
+    elif kind == 'comparison':
+        st.session_state['rs_context_comparison'] = st.session_state.get('rs_compare_country_active')
+
+
+def _choose_peer(choices: list[str], selected: str | None, previous_primary: str | None) -> str:
+    """Keep the selected peer valid after changing the primary country."""
+    if not choices:
+        raise ValueError('Pairwise comparison requires at least two countries.')
+    if selected in choices:
+        return selected
+    if previous_primary in choices:
+        return previous_primary
+    for preferred in ('Sweden', 'Estonia'):
+        if preferred in choices:
+            return preferred
+    return choices[0]
+
+
 def _link(link: str, text: str='View original source'):
     link=ev.url(link)
     if link: st.markdown(f'[{text}]({link})')
@@ -244,8 +276,16 @@ def _benchmark(data:dict,country:str):
 
 def _pairwise(data:dict,country:str):
     choices=[c for c in data['countries'] if c!=country]
-    default=choices.index('Sweden') if 'Sweden' in choices else 0
-    second=st.selectbox('Select the comparison country',choices,index=default,key='rs_compare_country_'+_slug(country))
+    # A shared comparison selector needs a valid value when the PRIMARY country
+    # changes (for example Sweden -> Estonia). Reset invalid or self-comparisons.
+    if st.session_state.get('rs_compare_country_active') not in choices:
+        st.session_state['rs_compare_country_active'] = _choose_peer(
+            choices,st.session_state.get('rs_compare_country_active'),
+            st.session_state.get('rs_previous_primary_country'))
+    second=st.selectbox('Select the comparison country', choices,
+                        key='rs_compare_country_active',
+                        on_change=_context_changed, args=('comparison',))
+    st.caption(f'Active comparison: {country} versus {second}. The tables below reflect this selection.')
     a=ev.coverage(data,country);b=ev.coverage(data,second)
     st.subheader(f'{country} and {second}')
     c1,c2=st.columns(2)
@@ -272,7 +312,7 @@ def _pairwise(data:dict,country:str):
     st.subheader('Intervention-level differences in documented evidence')
     first=ev.checklist_prefill(data,country);other=ev.checklist_prefill(data,second)
     available=[(x,y) for x,y in zip(first,other) if x['source_urls'] or y['source_urls']]
-    if not available:_light_notice('No source-linked intervention records for this comparison.')
+    if not available:_light_notice(f'No source-linked intervention records found for {country} or {second} in this reviewed subset. This does not establish that either country lacks these interventions.')
     for x,y in available:
         with st.expander(x['matrix_id']+' • '+x['ideal_intervention']):
             cols=st.columns(2)
@@ -302,6 +342,14 @@ def _pairwise(data:dict,country:str):
         st.session_state.pop('rag_pair_answer_'+pairkey,None)
         st.session_state.pop('rag_word_'+pairkey,None)
     retrieved_pair=st.session_state.get('rag_pair_'+pairkey)
+    # Each focus requires its own retrieval. Never show an answer produced for a
+    # different prompt merely because the same country pair is selected.
+    if retrieved_pair and retrieved_pair.get('question')!=query:
+        st.session_state.pop('rag_pair_'+pairkey,None)
+        st.session_state.pop('rag_pair_answer_'+pairkey,None)
+        st.session_state.pop('rag_word_'+pairkey,None)
+        retrieved_pair=None
+        st.caption('Comparison focus changed. Select Retrieve comparable source excerpts to update the RAG evidence.')
     if retrieved_pair:
         hits=retrieved_pair['hits']
         n1=sum(x['country']==country for x in hits)
@@ -375,6 +423,10 @@ def _checklist(data:dict,country:str):
                     'created':datetime.now(timezone.utc).isoformat(timespec='seconds'),
                     'candidate_updates':candidate_updates,
                     'items':ev.checklist_prefill(data,country,answers)}
+        # Any earlier drill-down selection must not be mistaken for the new
+        # response-specific assessment after the form is resubmitted.
+        st.session_state.pop('rs_checklist_item_'+key, None)
+        st.session_state.pop('rs_checklist_domain_'+key, None)
     saved=st.session_state.get('rs_assessment_'+key)
     if not saved:
         st.caption('You may skip all questions and still generate a checklist using the published research records.')
@@ -394,12 +446,14 @@ def _checklist(data:dict,country:str):
         st.write('**Research-first assessment summary:** '+str(cited)+' requirements have direct source links; '+
                  str(len(items)-cited)+' requirements require source-specific verification in the present dataset. This does not establish how many interventions are actually missing.')
         domains=['All domains']+list(dict.fromkeys(r['domain'] for r in items))
-        selected=st.selectbox('Filter the checklist by institutional domain',domains)
+        selected=st.selectbox('Filter the checklist by institutional domain',domains,
+                              key='rs_checklist_domain_'+key)
         eligible=[r for r in items if selected=='All domains' or r['domain']==selected]
         st.dataframe([{'ID':r['matrix_id'],'Domain':r['domain'],'Intervention':r['ideal_intervention'],
                        'Research assessment':r['research_status'],'Your answer':r['respondent_answer']}
                       for r in eligible],hide_index=True,use_container_width=True)
         chosen=st.selectbox('View detailed evidence and recommended intervention',eligible,
+                            key='rs_checklist_item_'+key,
                             format_func=lambda r:r['matrix_id']+' • '+r['ideal_intervention'])
         st.write('**Research classification:** '+chosen['research_status'])
         st.write('**Documented action:** '+(chosen['documented_action'] or 'No intervention-specific documented action in the reviewed sources'))
@@ -460,10 +514,25 @@ def render():
         <h1>Road Safety Institutional Toolkit</h1>
         <p>Explore country findings, compare international practices, and develop an evidence-grounded institutional improvement plan.</p></div>''',unsafe_allow_html=True)
         country=st.selectbox('Select your country',data['countries'],
-                             index=data['countries'].index('Estonia') if 'Estonia' in data['countries'] else 0,key='rs_toolkit_country')
+                             index=data['countries'].index('Estonia') if 'Estonia' in data['countries'] else 0,
+                             key='rs_toolkit_country',
+                             on_change=_context_changed,args=('country',))
+        if 'rs_context_country' not in st.session_state:
+            st.session_state['rs_context_country']=country
         mode=st.radio('What would you like to do?',(
             'Explore country findings','Benchmark internationally','Compare with another country','Generate my institutional checklist'),
-            key='rs_toolkit_mode',horizontal=True)
+            key='rs_toolkit_mode',horizontal=True,
+            on_change=_context_changed,args=('mode',))
+        # Unlike a static iframe, Streamlit reruns when country/mode changes.
+        # Displaying the active country makes the selected data context explicit.
+        st.markdown(
+            '<div class="rs-light-notice" role="status" aria-live="polite" '
+            'style="background:#edf7fb;color:#17324a;border:1px solid #bdd7e1;'
+            'border-left:4px solid #078da0;border-radius:8px;'
+            'padding:12px 16px;margin:10px 0 12px;">'
+            '<strong>Currently viewing:</strong> '+escape(country)+' &nbsp; | &nbsp; '+escape(mode)+'</div>',
+            unsafe_allow_html=True,
+        )
         st.divider()
         if mode=='Explore country findings':_country_findings(data,country)
         elif mode=='Benchmark internationally':_benchmark(data,country)
